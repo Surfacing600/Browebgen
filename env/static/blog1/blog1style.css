@@ -1,0 +1,420 @@
+
+*{
+	color: #f2e8d3;
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body{
+	background: black;
+	 margin: 0px;
+}
+
+header, nav{
+	background: #D6B066;
+}
+
+dl dt a{
+	color: #D6B066;
+}
+
+p a {
+	color: #D6B066;
+}
+
+.navbar{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 25px;
+	text-align: center;
+	margin:0;
+}
+
+.navbarlist{
+	padding: 20px;
+	margin: 10px;
+	border: solid 1px black;
+  	display: inline-flex;
+  	width: 200px;
+	justify-content: center;
+	z-index: 1;
+}
+
+img{
+	width:60px;
+    height:auto;
+    margin-top: 5px;
+}
+
+.logo{
+	text-align: center;
+	animation-name: logo;
+	opacity: 0;
+	animation-duration: 2s;
+	animation-delay: 0.2s;
+	animation-fill-mode: forwards;
+}
+
+.brand_name{
+	margin:0;
+	font-family: 'Gayathri', sans-serif;
+	color: #5E4B26;
+}
+
+/*logo animation*/
+
+@keyframes logo{  
+    0%{
+      opacity: 0;
+    }
+    10%{
+        opacity: 0.1;
+    }
+    20%{
+        opacity: 0.2;
+    }
+    30%{
+        opacity: 0.3;
+    }
+    40%{
+        opacity: 0.4;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    60% {
+      opacity: 0.6;
+    }
+    70%{
+        opacity: 0.7;
+    }
+    80%{
+        opacity: 0.8;
+    }
+    90%{
+        opacity: 0.9;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /*button animation*/
+  
+  a:active{
+      color: black;
+  }
+  
+  .btn{
+      position: relative;
+      padding: 14px 60px;
+      text-transform: uppercase;
+      overflow: hidden;
+  }
+  
+  .btn::before{
+      background: #5E4B26;
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      transition: all 0.6s ease;
+       z-index: -1;
+  }
+  
+  .button1::before{
+      width: 0%;
+      height: 100%;
+  }
+  
+  .button1:hover::before{
+        width: 100%;
+  }
+  
+  
+  .button2::before{
+      width: 100%;
+      height: 0%;
+  }
+  .button2:hover::before{
+        height: 100%;
+  }
+  
+  .button3::before{
+      width: 0%;
+      height: 100%;
+  }
+  .button3:hover::before{
+        width: 100%;
+  }
+
+/*blog style*/
+
+article{
+    margin: 3%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: left;
+    display: grid;
+    background: #5e2626;
+}
+
+ .mainimage{
+    width: 50%;
+    height: auto;
+    margin-left: 25%;
+    box-shadow: 10px 10px 70px black;
+}
+
+.image2{
+    width: 40%;
+    height: auto;
+    background: #5E4B26;
+    margin-left: 30%;
+}
+
+q{
+    margin: 5%;
+    padding: 3%;
+    text-align: center;
+    color: white;
+
+}
+
+h3{
+    margin-bottom:0px;
+}
+
+h1{
+    text-transform: uppercase;
+    font-size: 40px;
+}
+
+
+/*table style*/
+
+.tablewrapper{
+    overflow-x: auto;/*makes the table responsive by activating 
+    a horizontal sscroll bar if the screen is too narrow */
+}
+
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 2px solid #D6B066;
+    width: 100%;
+    background: #265e5a;  
+  }
+
+tr, th, .hostingimage{
+    width: 100px;
+}
+
+thead th:nth-child(1) {
+    width: 100px;/*using px instead of % for "overflow-x: auto;" to work*/
+  }
+  
+  thead th:nth-child(2) {
+    width: 100px;
+  }
+
+  thead th:nth-child(3) {
+    width: 100px;
+  }
+
+  thead th:nth-child(4) {
+    width: 100px;
+  }
+
+  thead th:nth-child(5) {
+    width: 100px;
+  }
+
+  thead th:nth-child(6) {
+    width: 100px;
+  }
+
+  thead th:nth-child(7) {
+    width: 100px;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+
+  tbody td {
+    text-align: center;
+    border-top: solid 2px #D6B066;
+  }
+
+  thead th {
+    text-align: center;
+    border-bottom: solid 2px #D6B066;
+  }
+
+  tbody th {
+    text-align: center;
+    border-right: solid 2px #D6B066;
+  }
+
+  /*footer styling*/
+
+  footer{
+	height: 100px;
+	border-top: dotted 1px #5E4B26;
+  }
+  
+  .footerlist{
+	 display: inline;
+	text-decoration: none;
+  }
+
+  .contact{
+	text-decoration: none;
+	color: white;
+	margin: 10px;
+	font-family: 'Montserrat', sans-serif;
+  }
+
+  .footericon{
+	  width: 30px;
+  }
+
+  .footercontainer{
+	  text-align: center;
+  }
+
+  .attribution{
+	  font-size: 10px;
+  }
+  
+.copyright{
+	font-size: 10px;
+}
+
+/*Responsive design part*/
+
+  @media screen and (max-width: 1090px) {
+
+    .navbarlist{
+      padding: 5px;
+      right: 2%;
+    }
+  
+    .navbar{
+      font-size: 20px;
+    }
+  }
+  
+
+@media screen and (max-width: 768px) {
+
+    .navbarlist{
+		padding: 5px;
+		right: 2%;
+	}
+
+	.navbar{
+		font-size: 20px;
+    }
+}
+
+/*iPhone 6/7/8 plus iOS 11*/
+
+@media screen and (max-width: 414px){
+
+    .contact{
+        font-size: 10px;
+    }
+
+    .navbarlist{
+		padding: 5px;
+		right: 4%;
+	}
+
+}
+
+/*For iPhone x/xs*/
+@media screen and (max-width: 375px) {
+	.navbarlist{
+		padding: 3px;
+		right: 4%;
+	}
+
+	.navbar{
+		font-size: 15px;
+	}
+
+	.para1{
+		font-size: 12px;
+	}
+
+	img{
+		width: 40px;
+		height: auto;
+		margin-top: 5px;
+	}
+}
+
+/*Galaxy S9/+ Android 7.0*/
+
+@media screen and (max-width: 360px){
+
+    .contact{
+        font-size: 10px;
+    }
+
+    .navbarlist{
+		padding: 5px;
+		right: 4%;
+    }
+    
+    .mainimage{
+        width: 70%;
+        margin-left: 15%;
+    }
+    
+    .image2{
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    @keyframes gradient {
+        0% {
+          background: radial-gradient(circle at center, #5E4B26 0%, #D6B066 0%, #D6B066 100%);
+        }
+        25% {
+          background: radial-gradient(circle at center, #5E4B26 24%, #D6B066 25%, #D6B066 100%);
+        }
+        50% {
+          background: radial-gradient(circle at center, #5E4B26 49%, #D6B066 50%, #D6B066 100%);
+        }
+        75% {
+          background: radial-gradient(circle at center, #5E4B26 74%, #D6B066 75%, #D6B066 100%);
+        }
+        100% {
+          color: #D6B066;
+          background: radial-gradient(circle at center, #5E4B26 99%, #D6B066 100%, #D6B066 100%);
+        }
+      }
+
+      .btn {
+        box-shadow: 0 6px 10px #5E4B26;
+        outline: none;
+      }
+      .btn:active {
+        /* set time duration to your needs */
+        animation: gradient 80ms;
+        background: #5E4B26;
+        box-shadow: none;
+      }
+      
+      
+
+}
+
+
+
+

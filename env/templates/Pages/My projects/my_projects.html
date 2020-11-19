@@ -1,0 +1,245 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+
+  	<meta charset="utf-8">
+	<title>Brochure websites</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg">
+	<meta name="author" content="Dmitry Martinov">
+	<meta name="description" content="Discover brochure website Dmitry built for his clients with small business.">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!--important for responsivness, for media queries to work-->
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Gayathri:wght@700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='my_projects/my_projectsstyle.css') }}">
+	<script src="https://www.google.com/recaptcha/api.js"></script>
+
+</head>
+
+<body>
+	{% if b == english %}
+
+	<header>
+
+		<nav>
+
+			<div class= "logo">
+				<img src="{{ url_for('static', filename='favicon.svg') }}" alt="deer">
+				<p class="brand_name">BROWEBGEN</p>
+			</div>
+
+			<ul class= "navbar">
+				<li class = "btn button1 navbarlist"><a href = "/blog">Blog</a></li>
+				<li class = "btn button2 navbarlist" ><a href = "/main_page">Main page</a></li>
+				<li class = "btn button3 navbarlist"><a href = "/about_me">About me</a></li>
+				<li class = "translator navbarlist">
+					
+					<form action="/my_projects" method="post"><!--selector, which allows to translate-->
+	
+						<select id = "dropdown" name="operation"><!--"operation" is what helps to recognise this input field in the back end-->
+							<option value="russian" >English</option><!--vallue gets passed to the back end and then the logic desides what language to translate into-->
+							<option value="english" selected >Русский</option><!--selected by default so that the user doesn't need to change the language-->
+						</select>
+
+						<input id = "translate_button" type="submit" name="translate" value="Translate to Russian"><!--the button, which sends the data to the back end-->
+					
+					</form>
+				</li>
+			</ul>
+		</nav>
+
+	</header>
+
+	{% if b == english %}
+
+	<main>
+		<h1>Be the first one for your project to be added to this page!</h1>
+		{% elif a == russian %}
+			<h6>Be the first one for your project to be added to this page!</h6>
+		{% endif %}
+
+		<div class = "testimonial">
+			{% for testimonial in testimonials %}
+				<h2 class = "name">{{ testimonial.name }}</h2>
+				<h4 class = "testimonial_message">{{ testimonial.testimonial }}</h4>
+			{% endfor %}
+		</div>
+
+		<form class = "contactform" action="/my_projects" method="post">
+				{{ form.hidden_tag() }}<!--need to add CRSF token to protect the website from forgery attacks-->
+			<div class= "form_input_field">
+				{% if form.name.errors %}
+					{{ form.name(placeholder="Your name", class = "d") }}</p><!--actual input field from the form-->
+			</div>
+
+			<div>
+				{% for error in form.name.errors %}
+					<span class= "form_error">{{ error }}</span>
+				{% endfor %}
+			</div>
+
+			<div class= "form_input_field">
+				{% else %}
+					{{ form.name(placeholder="Your name", class = "d") }}
+				{% endif %}
+			</div>
+
+			<div class= "form_input_field">
+				{% if form.testimonial.errors %}
+					{{ form.testimonial(placeholder="Your testimonial") }}<!--actual input field from the form-->
+			</div>
+
+			<div>
+				{% for error in form.testimonial.errors %}
+					<span class= "form_error"> {{ error }} </span>
+				{% endfor %}
+			</div>
+
+			<div class= "form_input_field">
+				{% else %}
+					{{ form.testimonial(placeholder="Your testimonial") }}
+				{% endif %}
+			</div>
+
+			<div class= "form_input_field">
+				{{ form.submit() }}<!--actual input field from the form-->
+			</div>
+
+			<div class= "recaptcha_field">
+				{{ form.recaptcha }}
+			</div>
+
+			<div>
+				{% for error in form.recaptcha.errors %}
+					<span class= "form_error"> {{ error }} </span>
+				{% endfor %}
+			</div>
+
+		</form>
+			
+	</main>
+		
+	<footer>
+
+		<div class= "footercontainer">
+			<ul class="footer">
+				<li class = "footerlist"><a href="mailto:dmimart@hotmail.com?subject= I'd like to ask for my website&body=Hi Dima," target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='email.svg') }}" class = "footericon" alt="envelope"></a><a href="mailto:dmimart@hotmail.com?subject=Would like to ask for my website&body=Hi Dima," target="_blank" rel="noopener noreferrer" class = "contact">Contact via email</a></li>
+				<li class = "footerlist"><a href="https://api.whatsapp.com/send?phone=077487731324" target="_blank" rel="noopener noreferrer" class = "socmed"><img src="{{ url_for('static', filename='whatsapp.svg') }}" class = "footericon" alt="WhatsApp symbol"></a><a href="https://api.whatsapp.com/send?phone=077487731324" target="_blank" rel="noopener noreferrer" class = "contact">Contact via WhatsApp</a></li>
+			</ul>
+			<p class = "attribution">Icons on this page made by<a class = "hyperlinks" href = "https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer"> Freepik </a> and <a class = "hyperlinks" href = "https://www.flaticon.com/authors/pixel-perfect" target="_blank" rel="noopener noreferrer"> Pixel perfect </a> from <a class = "hyperlinks" href = "https://www.flaticon.com/" target="_blank" rel="noopener noreferrer"> www.flaticon.com</a></p>
+			<p class="copyright">Copyright © 2020. BROWEBGEN.COM. All rights reserved.</p>
+		</div>
+
+	</footer>
+	
+</body>
+
+
+<!--------------------------------------------RU-->
+<body>
+	{% elif a == russian %}
+	<header>
+		<nav>
+
+			<div class= "logo">
+			<img src="{{ url_for('static', filename='favicon.svg') }}" alt="deer">
+			<p class="brand_name">BROWEBGEN</p>
+			</div>
+			<ul class= "navbar">
+				<li class = "btn button1 navbarlist"><a href = "/blog">Blog</a></li>
+				<li class = "btn button2 navbarlist" ><a href = "/main_page">Main page</a></li>
+				<li class = "btn button3 navbarlist"><a href = "/about_me">About me</a></li>
+				<li class = "translator navbarlist"><form action="/my_projects" method="post">
+				
+					<select id = "dropdown" name="operation">
+						<option value="russian" selected >English</option>
+						<option value="english" >Русский</option>
+					</select>
+					<input id = "translate_button" type="submit" name="translate" value="Translate to English">
+				</form></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+
+		<h1>Будь первым чей проект будет добавлен на эту страницу!</h1>
+	
+	</main>
+
+		<div class = "testimonial">
+			{% for testimonial in testimonials %}
+				<h2 class = "name">{{ testimonial.name }}</h2>
+				<h4 class = "testimonial_message">{{ testimonial.testimonial }}</h4>
+			{% endfor %}
+		</div>
+
+		<form class = "contactform" action="/my_projects" method="post">
+			{{ form.hidden_tag() }}<!--need to add CRSF token to protect the website from forgery attacks-->
+		<div class= "form_input_field">
+			{% if form.name.errors %}
+				{{ form.name(placeholder="Your name", class = "d") }}</p><!--actual input field from the form-->
+		</div>
+
+		<div>
+			{% for error in form.name.errors %}
+				<span class= "form_error">{{ error }}</span>
+			{% endfor %}
+		</div>
+
+		<div class= "form_input_field">
+			{% else %}
+				{{ form.name(placeholder="Your name", class = "d") }}
+			{% endif %}
+		</div>
+
+		<div class= "form_input_field">
+			{% if form.testimonial.errors %}
+				{{ form.testimonial(placeholder="Your testimonial") }}<!--actual input field from the form-->
+		</div>
+
+		<div>
+			{% for error in form.testimonial.errors %}
+				<span class= "form_error"> {{ error }} </span>
+			{% endfor %}
+		</div>
+
+		<div class= "form_input_field">
+			{% else %}
+				{{ form.testimonial(placeholder="Your testimonial") }}
+			{% endif %}
+		</div>
+
+		<div class= "form_input_field">
+			{{ form.submit() }}<!--actual input field from the form-->
+		</div>
+
+		<div class= "recaptcha_field">
+			{{ form.recaptcha }}
+		</div>
+
+		<div>
+			{% for error in form.recaptcha.errors %}
+				<span class= "form_error"> {{ error }} </span>
+			{% endfor %}
+		</div>
+
+	</form>
+		
+
+		
+	<footer>
+		<div class= "footercontainer">
+			<ul class="footer">
+				<li class = "footerlist"><a href="mailto:dmimart@hotmail.com?subject= I'd like to ask for my website&body=Hi Dima," target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='email.svg') }}" class = "footericon" alt="envelope"></a><a href="mailto:dmimart@hotmail.com?subject=Would like to ask for my website&body=Hi Dima," target="_blank" rel="noopener noreferrer" class = "contact">Contact via email</a></li>
+				<li class = "footerlist"><a href="https://api.whatsapp.com/send?phone=077487731324" target="_blank" rel="noopener noreferrer" class = "socmed"><img src="{{ url_for('static', filename='whatsapp.svg') }}" class = "footericon" alt="WhatsApp symbol"></a><a href="https://api.whatsapp.com/send?phone=077487731324" target="_blank" rel="noopener noreferrer" class = "contact">Contact via WhatsApp</a></li>
+			</ul>
+			<p class = "attribution">Icons on this page made by<a class = "hyperlinks" href = "https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer"> Freepik </a> and <a class = "hyperlinks" href = "https://www.flaticon.com/authors/pixel-perfect" target="_blank" rel="noopener noreferrer"> Pixel perfect </a> from <a class = "hyperlinks" href = "https://www.flaticon.com/" target="_blank" rel="noopener noreferrer"> www.flaticon.com</a></p>
+			<p class="copyright">Copyright © 2020. BROWEBGEN.COM. All rights reserved.</p>
+		</div>
+	</footer>
+	{% endif %}
+</body>
+</html>

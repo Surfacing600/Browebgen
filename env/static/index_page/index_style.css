@@ -1,0 +1,353 @@
+/*NOTE: if "now" button on this page doesn't
+get rendered check the path to the link "a" for this button*/
+
+* {
+  text-decoration: none;
+}
+
+img{/*logo image*/
+	width:200px;
+    height:auto;
+    margin-top: 5px;
+    color:green;
+}
+
+body{
+	background: black;
+  margin-top: 300px;
+}
+
+.logo{
+	text-align: center;
+	animation-name: logo;
+  opacity: 0;
+  margin-bottom: 50px;
+	animation-duration: 2s;
+	animation-delay: 3.5s;
+  animation-fill-mode: forwards;
+}
+
+.brand_name{
+	margin:0;
+	font-family: 'Gayathri', sans-serif;
+  color: #5E4B26;
+  font-size: 30px;
+}
+
+.line1{
+	text-align: center;
+  font-size: 50px;
+  text-transform: uppercase;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: bold;
+  padding-bottom: 15px;
+	animation-name: call_to_action;
+  transition-duration: 10s;
+  transition-property: background;
+	animation-duration: 2s;
+	color: #f2e8d3;
+}
+
+.line2{
+	color: #f2e8d3;
+	margin-top: 1px;
+	text-align: center;
+	font-style: italic;
+  padding-top: 15px;
+	opacity: 0;
+	font-size: 15px;
+	font-family: 'Source Sans Pro', sans-serif;
+	animation-name: quote;
+	animation-duration: 3s;
+	animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+a[href="/main_page"]{
+  color: #f2e8d3;
+  padding: 5px;
+  font-size: 30px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  position: relative;
+  border: 2px solid #f2e8d3;
+}/*color set for a specific link, instead of just "a" element*/
+
+.button{
+    opacity: 0;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    left: 48%;
+    animation-name: enter_button;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    font-size: 40px;
+}
+
+/*logo animation*/
+@keyframes logo{  
+  0%{
+    opacity: 0;
+  }
+  10%{
+      opacity: 0.1;
+  }
+  20%{
+      opacity: 0.2;
+  }
+  30%{
+      opacity: 0.3;
+  }
+  40%{
+      opacity: 0.4;
+  }
+  50%{
+      opacity: 0.5;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  70%{
+      opacity: 0.7;
+  }
+  80%{
+      opacity: 0.8;
+  }
+  90%{
+      opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes call_to_action{  
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  10%{
+  	opacity: 0.1;
+  }
+  20%{
+  	opacity: 0.2;
+  }
+  30%{
+  	opacity: 0.3;
+  }
+  40%{
+  	opacity: 0.4;
+  }
+  50%{
+  	opacity: 0.5;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+  70%{
+  	opacity: 0.7;
+  }
+  80%{
+  	opacity: 0.8;
+  }
+  90%{
+  	opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes quote{
+	0% {
+		opacity: 0;
+     padding-top: 15px;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes enter_button{
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+    display: inline;
+	}
+}
+
+
+.button::before{
+  background: #D6B066;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+
+.button::before{
+  width: 55%;
+  height: 0%;
+  transform: translate(-50%,-50%) rotate(90deg);
+}
+.button:hover::before{
+  height: 195%;
+}
+
+.button:active{
+  color:black;
+}
+
+/*Responsive design part*/
+
+@media screen and (max-width: 1019px){
+  
+  .button{
+    left: 46%;
+}
+
+}
+
+ /*iPad*/
+@media screen and (max-width: 768px) {
+    
+  img{/*logo image*/
+      width:200px;
+      height:auto;
+      margin-bottom: 5px;
+      color:green;
+  }
+
+  .brand_name{
+    font-size: 30px;
+  }
+  
+  .line1 {
+        font-size: 40px;
+    }
+
+    a{
+      font-size: 30px;
+    }
+
+    .button:active{
+    color:#D6B066;
+  }
+
+  .button{
+    left: 44%;
+  }
+}
+
+@media screen and (max-width: 450px){
+  
+    .button{
+      left: 40%;
+  }
+  
+  }
+ /*iPhone 6/7/8 plus iOS11*/
+@media screen and (max-width: 414px) {
+    
+  img{/*logo image*/
+    width: 130px;
+}
+
+  .brand_name{
+    font-size: 20px;
+}
+
+.logo{
+  margin-bottom: 30px;
+  position: absolute;
+  top: 10%;
+  left: 33%;
+}
+  
+  .line1 {
+        font-size: 20px;
+    }
+
+    a[href="/main_page"]{
+      font-size: 20px;
+    }
+
+    .button:active{
+    color:#D6B066;
+    }
+
+    .button{
+      left: 41%;
+    }
+  }
+ /*iPhone 6/7/8 iOS11*/
+  @media screen and (max-width: 375px) {
+    
+    img{/*logo image*/
+      width: 130px;
+  }
+  
+    .brand_name{
+      font-size: 20px;
+  }
+  
+  .logo{
+    margin-bottom: 30px;
+    position: absolute;
+    top: 10%;
+    left: 32%;
+  }
+    
+    .line1 {
+          font-size: 20px;
+      }
+  
+      a[href="/main_page"]{
+        font-size: 20px;
+      }
+  
+      .button:active{
+      color:#D6B066;
+      }
+  
+      .button{
+        left: 41%;
+      }
+    }
+
+
+  /*Galaxy S9 Android 7.0*/
+@media screen and (max-width: 360px){
+
+  img{/*logo image*/
+    width:130px;
+    height:auto;
+    margin-bottom: 5px;
+    color:green;
+}
+
+  .brand_name{
+    font-size: 20px;
+}
+
+  .button{
+    left: 42%;
+}
+
+.line1{
+  font-size: 20px;
+}
+
+a[href="/main_page"]{
+  font-size: 20px;
+}
+
+}

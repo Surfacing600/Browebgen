@@ -1,0 +1,28 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Brochure website services</title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg">
+  <meta name="author" content="Dmitry Martinov">
+  <meta name="description" content="The BROWEBGEN website aims to familiarise potential clients with my services around brochure websites for their small business.">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!--important for responsivness, for media queries to work-->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='index_page/index_style.css') }}">
+</head>
+
+<body>
+
+  <div class= "logo">
+    <img src="{{ url_for('static', filename='index_page/logo_for_index_page.png') }}" alt="deer">
+    <p class="brand_name">BROWEBGEN</p>
+  </div>
+
+	<div class="line1">Explore the world of brochure websites</div>
+    <a class = "button btn" href = "/main_page">Now</a>
+    <div class="line2">“Websites promote you 24/7: No employee will do that.”― Paul Cookson
+  </div>
+</body>
+</html>

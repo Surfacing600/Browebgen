@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+
+  	<meta charset="utf-8">
+	<title>Blog on web development</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg">
+	<meta name="author" content="Dmitry Martinov">
+	<meta name="description" content="Read the blog on web development and brochure websites by a guy who's new to web development.">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!--important for responsivness, for media queries to work-->
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Gayathri:wght@700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='blog/blog_style.css') }}">
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+
+	<!-- Option 2: jQuery, Popper.js, and Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+
+	<header>
+		<nav>
+
+			<div class= "logo">
+			<img src="{{ url_for('static', filename='favicon.svg') }}" alt="deer">
+			<p class="brand_name">BROWEBGEN</p>
+			</div>
+			<ul class= "navbar">
+				<li class = "btn button1 navbarlist"><a href = "/my_projects">My projects</a></li>
+				<li class = "btn button2 navbarlist" ><a href = "/main_page">Main page</a></li>
+				<li class = "btn button3 navbarlist"><a href = "/about_me">About me</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		
+		<div class="blog1">
+			<a href= "/blog1" class="imagelink"><img src="{{ url_for('static', filename='blog/server.jpg') }}" class="blog1image" alt="server"></a>
+			<a href= "/blog1" class="blog1heading"><h1>On web hosting and domains</h1></a>
+		</div>
+
+	</main>
+		
+	<footer>
+		<div class= "footercontainer">
+			<ul class="footer">
+				<li class = "footerlist"><a href="mailto:dmimart@hotmail.com?subject= I'd like to ask for my website&body=Hi Dima," target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='email.svg') }}" class = "footericon" alt="envelope"></a><a href="mailto:dmimart@hotmail.com?subject=Would like to ask for my website&body=Hi Dima," target="_blank" rel="noopener noreferrer" class = "contact">Contact via email</a></li>
+				<li class = "footerlist"><a href="https://api.whatsapp.com/send?phone=077487731324" target="_blank" rel="noopener noreferrer" class = "socmed"><img src="{{ url_for('static', filename='whatsapp.svg') }}" class = "footericon" alt="WhatsApp symbol"></a><a href="https://api.whatsapp.com/send?phone=077487731324" target="_blank" rel="noopener noreferrer" class = "contact">Contact via WhatsApp</a></li>
+			</ul>
+			<p class = "attribution">Icons on this page made by<a class = "hyperlinks" href = "https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer"> Freepik </a> and <a class = "hyperlinks" href = "https://www.flaticon.com/authors/pixel-perfect" target="_blank" rel="noopener noreferrer"> Pixel perfect </a> from <a class = "hyperlinks" href = "https://www.flaticon.com/" target="_blank" rel="noopener noreferrer"> www.flaticon.com</a></p>
+			<p class="copyright">Copyright © 2020. BROWEBGEN.COM. All rights reserved.</p>
+		</div>
+	</footer>
+</body>
+</html>

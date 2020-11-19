@@ -1,0 +1,381 @@
+
+*{
+	color: #f2e8d3;
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body{
+	background: black;
+	 margin: 0px;
+}
+
+header, nav{
+	background: #D6B066;
+}
+
+dl dt a{
+	color: #D6B066;
+}
+
+p a {
+	color: #D6B066;
+}
+
+.navbar{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 25px;
+	text-align: center;
+	margin:0;
+}
+
+.navbarlist{
+	padding: 20px;
+	margin: 10px;
+	border: solid 1px black;
+  	display: inline-flex;
+  	width: 200px;
+	justify-content: center;
+	z-index: 1;
+}
+
+img{
+	width:60px;
+    height:auto;
+    margin-top: 5px;
+}
+
+
+.logo{
+	text-align: center;
+	animation-name: logo;
+	opacity: 0;
+	animation-duration: 2s;
+	animation-delay: 0.2s;
+	animation-fill-mode: forwards;
+}
+
+.brand_name{
+	margin:0;
+	font-family: 'Gayathri', sans-serif;
+	color: #5E4B26;
+}
+
+/*logo animation*/
+
+@keyframes logo{  
+    0%{
+      opacity: 0;
+    }
+    10%{
+        opacity: 0.1;
+    }
+    20%{
+        opacity: 0.2;
+    }
+    30%{
+        opacity: 0.3;
+    }
+    40%{
+        opacity: 0.4;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    60% {
+      opacity: 0.6;
+    }
+    70%{
+        opacity: 0.7;
+    }
+    80%{
+        opacity: 0.8;
+    }
+    90%{
+        opacity: 0.9;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /*button animation*/
+  
+  a:active{
+      color: black;
+  }
+  
+  .btn{
+      position: relative;
+      padding: 14px 60px;
+      text-transform: uppercase;
+      overflow: hidden;
+  }
+  
+  .btn::before{
+      background: #5E4B26;
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      transition: all 0.6s ease;
+       z-index: -1;
+  }
+  
+  .button1::before{
+      width: 0%;
+      height: 100%;
+  }
+  
+  .button1:hover::before{
+        width: 100%;
+  }
+  
+  
+  .button2::before{
+      width: 100%;
+      height: 0%;
+  }
+  .button2:hover::before{
+        height: 100%;
+  }
+  
+  .button3::before{
+      width: 0%;
+      height: 100%;
+  }
+  .button3:hover::before{
+        width: 100%;
+  }
+
+/*blogs styling*/
+
+  .blog1image{
+    width: 40%;
+    filter: grayscale(100%);
+}
+
+.blog1image:hover{
+    filter:grayscale(0%);
+}
+
+.blog1{
+    text-align: center;
+    position: relative;
+    margin: 5%;
+}
+
+.blog1heading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size:1.1vw; /*makes font size responsive*/
+    transform: translate(-50%, -50%);
+}
+
+
+/*footer styling*/
+
+  footer{
+	height: 100px;
+	border-top: dotted 1px #5E4B26;
+  }
+  
+  .footerlist{
+	 display: inline;
+	text-decoration: none;
+  }
+
+  .contact{
+	text-decoration: none;
+	color: white;
+	margin: 10px;
+	font-family: 'Montserrat', sans-serif;
+  }
+
+  .footericon{
+	  width: 30px;
+  }
+
+  .footercontainer{
+	  text-align: center;
+  }
+
+  .attribution{
+	  font-size: 10px;
+  }
+  
+.copyright{
+	font-size: 10px;
+}
+
+/*Responsive design part*/
+
+  @media screen and (max-width: 1090px) {
+
+	.navbarlist{
+		padding: 5px;
+		right: 2%;
+	}
+
+	.navbar{
+		font-size: 20px;
+	}
+}
+
+
+@media screen and (max-width: 1075px) {
+	.navbarlist{
+		padding: 10px;
+		right: 4%;
+	}
+
+	.navbar{
+		font-size: 15px;
+    }
+    
+	  .footericon{
+		width: 25px;
+	}
+
+	.attribution{
+		font-size: 10px;
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .navbarlist{
+		padding: 5px;
+		right: 2%;
+	}
+
+	.navbar{
+		font-size: 20px;
+    }
+    
+    .picturecontainer{
+        height: 256px
+    }
+
+    .blog1image{
+        width: 90%;
+        filter: grayscale(0%);
+    }
+
+    .blog1heading{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 30px;
+        transform: translate(-50%, -50%);
+    }
+
+}
+
+  /*Responsive design part*/
+
+  @media screen and (max-width: 664px) {
+
+	.blog1heading{
+        font-size: 20px;
+    }
+}
+
+
+/*For iPhone 6/7/8*/
+
+@media screen and (max-width: 414px) {
+    .navbarlist{
+        padding: 5px;
+        width: 200px;
+    }
+
+    .navbarlist{
+		right: 5%;
+	}
+
+    .picturecontainer{
+        height: 138px;
+    }
+
+    .blog1image{
+        width: 90%;
+        filter: grayscale(0%);
+    }
+
+    .blog1heading{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 15px;
+        transform: translate(-50%, -50%);
+    }
+
+    .contact{
+		font-size: 13px;
+      }
+
+	.footericon{
+		width: 30px;
+	}
+
+	.attribution{
+		font-size: 10px;
+    }
+}
+
+/*For iPhone x/xs*/
+
+@media screen and (max-width: 375px) {
+    
+        .navbarlist{
+            padding: 3px;
+            right: 4%;
+        }
+
+        .navbar{
+            font-size: 15px;
+        }
+    
+          img{
+            width: 40px;
+            height: auto;
+            margin-top: 5px;
+        }
+
+        .picturecontainer{
+            height: 256px
+        }
+
+        .blog1image{
+            width: 90%;
+            filter: grayscale(0%);
+        }
+
+        .blog1heading{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 15px;
+            transform: translate(-50%, -50%);
+        }
+
+        .footericon{
+            width: 25px;
+        }
+    
+        .attribution{
+            font-size: 7px;
+        }
+    
+        .picturecontainer{
+            height: 125px
+        }
+
+        .contact{
+            font-size: 10px;
+        }
+    }

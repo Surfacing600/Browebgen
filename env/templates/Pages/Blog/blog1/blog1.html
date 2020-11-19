@@ -1,0 +1,184 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+
+  	<meta charset="utf-8">
+	<title>Blog on web hosting</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg">
+	<meta name="author" content="Dmitry Martinov">
+    <meta name="description" content="Read the blog on the basics of web hosting and domains. The blog explains how websites, web hosting, 
+    servers and domains link together, as well as some of their prices in the UK. ">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!--important for responsivness, for media queries to work-->
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Gayathri:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='blog1/blog1style.css') }}">
+
+</head>
+
+<body>
+
+	<header>
+		<nav>
+
+			<div class= "logo">
+			<img src="{{ url_for('static', filename='favicon.svg') }}" alt="deer">
+			<p class="brand_name">BROWEBGEN</p>
+			</div>
+			<ul class= "navbar">
+				<li class = "btn button1 navbarlist"><a href = "/my_projects">My projects</a></li>
+				<li class = "btn button2 navbarlist" ><a href = "/main_page">Main page</a></li>
+                <li class = "btn button3 navbarlist"><a href = "/about_me">About me</a></li>
+                <li class = "btn button3 navbarlist"><a href = "/blog">Back to blogs</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+
+		<article>
+            <img src="{{ url_for('static', filename='blog1/server.jpg') }}" class= "mainimage" alt="server">
+			<h1>On web hosting and domains</h1>
+			<p>
+				I first would like to mention that this article is about UK servers, however it doesn't mean that
+				I can't create and put your website live if you're based in a different country. While the topic on whether 
+				your website host has to be in the same country as your target audience deserves a separate blog 
+				it's better to use domestic hosting and domain. At least because it ensures faster load speed of your website. 
+			</p>
+			<h3>What is a server?</h3>
+			<p>
+                You might have seen in movies these big rooms with corridors made of blocks with hundreds of flashy indicators on them. 
+                What they didn't tell you is that these are big computers that every online service or a website relies on. These are called servers.
+                A server is a piece of computer hardware, which provides functionality for other clients (programs or devices). 
+                This functionality often called "services". The types of services we're talking about here are: sharing data or resources among multiple
+                clients or performing computation for a client. A single server can serve multiple clients, and a single client can use multiple servers.
+                A client makes a request to a server and a server serves the client by responding to the client's request. Servers, among other things, 
+                store websites. Technically, every time you access a website you, as a client, make a request to a server which stores the website you're 
+                trying to access. A server responds by delivering the webpages to you through your browser.
+            </p>
+
+            <img src="{{ url_for('static', filename='blog1/Client-server-model.png') }}" class= "image2" alt="client internet server model">
+            
+			<q>
+				Servers, among other things, store websites.
+            </q>
+
+			<h3>What is web hosting?</h3>
+			<p>
+                As a service web hosting allows you to post your website onto the Internet. A web host is a business that provides the technologies and
+                services needed for the website or webpage to be viewed on the Internet. A web host owns and maintains servers that have to be on 24/7 so
+                that your website is always available. You can purchase your server and keep it at home, but apart of paying for your server, you will need
+                to deal with a pretty high electricity bill. It's often doesn't worth the hassle. A web hosting provider also provides a domain name for
+                your website.
+            </p>
+			<q>
+				A web host owns and maintains servers that have to be on 24/7 so that your website is always available.
+            </q>
+            <h3>What is a domain name?</h3>
+			<p>
+                A domain name is your unique website name, which users use to access your website. BROWEBGEN.uk is the domain name of 
+                my website. Instead of having random numbers (IP address) as your domain name you buy a human readable, unique name.
+                While, computers use IP addresses, for finding and identifying computers on the Internet humans use that additional, 
+                more comprehensible and memorable layer of address to find websites on the Internet. 
+            </p>
+            
+            <q>
+				A domain name is your unique website name, which users use to access your website.
+            </q>
+
+			<h3>Why do you need a web host?</h3>
+			<p>
+                Given what's written above you need a web host to get your website files uploaded on a server maintained by your web host so
+                that the server can serve clients (visitors of your website) 24/7. They also provide you with your unique domain name.
+                That's what you pay them for on a monthly basis. 
+            </p>
+			<h3>Some UK hosting providers and their prices.</h3>
+			<p>
+                Having the explanation of server and web hosting out of the way lets look at some UK web hosts and their prices as of 2020.
+                The table below represents a small sample of randomly selected web hosting providers in the UK just to give you an idea of how much having 
+                your website will cost you per month. You're welcome to make your own choice as there are many more hosting providers out there. 
+                Also, since most prices are not static you may see slightly higher prices once you visit the web hosting provider's website. Generally,
+                you can get away with a minimum price for your brochure website as this kind of website is lightweight. The prices are higher for 
+                bigger businesses as they require more sophisticated websites that have e-commerce functionality, a lot more pages or, perhaps, connected to a database. 
+            </p>
+            <div class= "tablewrapper">
+			<table>
+                <thead>
+                    <tr>
+                        <th scope="col">UK web hosts</th><!--table headers-->
+                        <th scope="col">Minimum price per month 1st year</th>
+                        <th scope="col">Minimum price per month consequent years</th>
+                        <th scope="col">Domain price per month 1st year</th>
+                        <th scope="col">Domain price per month consequent years</th>
+                        <th scope="col">Uptime</th>
+                        <th scope="col">Total price per month</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><!--table row-->
+                        <th scope="row"><a href= "https://www.hosting.co.uk/" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/hosting.png') }}" class="hostingimage"></a></th><!--table data-->
+                        <td>£2.40</td>
+                        <td>N/A</td>
+                        <td>£0.49</td>
+                        <td>N/A</td>
+                        <td>99.9%</td>
+                        <td>£2.89</td>
+                    </tr>
+                    <tr><!--table row-->
+                        <th scope="row"><a href= "https://www.123-reg.co.uk/" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/123reg.png') }}" class="hostingimage"></a></th><!--table data-->
+                        <td>£2.99</td>
+                        <td>£4.99</td>
+                        <td>£0.08</td>
+                        <td>£1</td>
+                        <td>99.9%</td>
+                        <td>£3.07-£5.99</td>
+                    </tr>
+                    <tr><!--table row-->
+                        <th scope="row"><a href= "https://www.webhosting.uk.com/windows-hosting" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/whuk.png') }}" class="hostingimage"></a></th><!--table data-->
+                        <td>£2.49</td>
+                        <td>N/A</td>
+                        <td>£0.70</td>
+                        <td>N/A</td>
+                        <td>99.9%</td>
+                        <td>£3.19</td>
+                    </tr>
+                    <tr><!--table row-->
+                        <th scope="row"><a href= "https://www.names.co.uk/web-hosting" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/names.png') }}"class="hostingimage"></a></th><!--table data-->
+                        <td>£4.12</td>
+                        <td>N/A</td>
+                        <td>0.08</td>
+                        <td>N/A</td>
+                        <td>99.9%</td>
+                        <td>£4.20</td>
+                    </tr>
+                    <tr><!--table row-->
+                        <th scope="row"><a href= "https://uk.godaddy.com/hosting/windows-hosting" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/godaddy.png') }}" class="hostingimage"></a></th><!--table data-->
+                        <td>£3.99</td>
+                        <td>£5.99</td>
+                        <td>£0.01</td>
+                        <td>£1</td>
+                        <td>99.9%</td>
+                        <td>£4-£6.99</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+		</article>
+			
+	</main>
+		
+	<footer>
+
+        <div class= "footercontainer">
+			<ul class="footer">
+                <li class = "footerlist"><a href="mailto:dmimart@hotmail.com?subject= I'd like to ask for my website&body=Hi Dima," target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='email.svg') }}" class = "footericon" alt="envelope"></a><a href="mailto:dmimart@hotmail.com?subject=Would like to ask for my website&body=Hi Dima," target="_blank" rel="noopener noreferrer" class = "contact">Contact via email</a></li>
+				<li class = "footerlist"><a href="https://api.whatsapp.com/send?phone=077487731324" target="_blank" rel="noopener noreferrer" class = "socmed"><img src="{{ url_for('static', filename='whatsapp.svg') }}" class = "footericon" alt="WhatsApp symbol"></a><a href="https://api.whatsapp.com/send?phone=077487731324" target="_blank" rel="noopener noreferrer" class = "contact">Contact via WhatsApp</a></li>
+			</ul>
+			<p class = "attribution">Icons on this page made by<a class = "hyperlinks" href = "https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer"> Freepik </a> and <a class = "hyperlinks" href = "https://www.flaticon.com/authors/pixel-perfect" target="_blank" rel="noopener noreferrer"> Pixel perfect </a> from <a class = "hyperlinks" href = "https://www.flaticon.com/" target="_blank" rel="noopener noreferrer"> www.flaticon.com</a></p>
+			<p class="copyright">Copyright © 2020. BROWEBGEN.COM. All rights reserved.</p>
+		</div>
+			
+	</footer>
+</body>
+</html>
