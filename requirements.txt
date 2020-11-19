@@ -110,5 +110,4 @@ widgetsnbextension==3.5.1
 wrapt==1.12.1
 WTForms==2.3.3
 XlsxWriter==1.2.7
-xlwings==0.18.0
 zipp==3.1.0
