@@ -1,1 +1,1 @@
-web: gunicorn app:browebgen_backend
+web: gunicorn app:app

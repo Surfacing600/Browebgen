@@ -173,7 +173,7 @@ def blog1():
     return render_template("/Pages/Blog/blog1/blog1.html")
 
 
-@app.route('/home_page')#needed for the page to get loaded
+@app.route('/')#needed for the page to get loaded
 
 def index():
     return render_template("/index.html")
