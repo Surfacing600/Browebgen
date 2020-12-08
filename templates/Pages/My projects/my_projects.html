@@ -7,12 +7,13 @@
 	<title>Brochure websites</title>
 	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg">
 	<meta name="author" content="Dmitry Martinov">
-	<meta name="description" content="Discover brochure website Dmitry built for his clients with small business.">
+	<meta name="description" content="Discover brochure websites Dmitry's built for his clients with small business.">
 	<meta name="viewport" content="width=device-width, initial-scale=1"><!--important for responsivness, for media queries to work-->
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Gayathri:wght@700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='main_page/main_pagestyle.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='my_projects/my_projectsstyle.css') }}">
 	<script src="https://www.google.com/recaptcha/api.js"></script>
 
@@ -26,48 +27,67 @@
 		<nav>
 
 			<div class= "logo">
-				<img src="{{ url_for('static', filename='favicon.svg') }}" alt="deer">
-				<p class="brand_name">BROWEBGEN</p>
+				<a href = "/main_page"><img src="{{ url_for('static', filename='favicon.svg') }}" alt="deer"></a>
+				<a href = "/main_page"><p class="brand_name">BROWEBGEN</p></a>
 			</div>
 
 			<ul class= "navbar">
 				<li class = "btn button1 navbarlist"><a href = "/blog">Blog</a></li>
 				<li class = "btn button2 navbarlist" ><a href = "/main_page">Main page</a></li>
 				<li class = "btn button3 navbarlist"><a href = "/about_me">About me</a></li>
-				<li class = "translator navbarlist">
-					
-					<form action="/my_projects" method="post"><!--selector, which allows to translate-->
+			</ul>
+					<form action="/my_projects" method="post" class="translator"><!--selector, which allows to translate-->
 	
 						<select id = "dropdown" name="operation"><!--"operation" is what helps to recognise this input field in the back end-->
 							<option value="russian" >English</option><!--vallue gets passed to the back end and then the logic desides what language to translate into-->
 							<option value="english" selected >Русский</option><!--selected by default so that the user doesn't need to change the language-->
 						</select>
 
-						<input id = "translate_button" type="submit" name="translate" value="Translate to Russian"><!--the button, which sends the data to the back end-->
+						<input id = "translate_button" type="submit" name="translate" value="RU"><!--the button, which sends the data to the back end-->
 					
 					</form>
-				</li>
-			</ul>
 		</nav>
 
 	</header>
 
-	{% if b == english %}
-
 	<main>
-		<h1>Be the first one for your project to be added to this page!</h1>
-		{% elif a == russian %}
-			<h6>Be the first one for your project to be added to this page!</h6>
-		{% endif %}
 
-		<div class = "testimonial">
+		<section class="section1">
+
+			<p class="statement">My projects and feedback.</p>
+
+		</section>
+
+		<div class="form_input_field">
+
+			{% with messages = get_flashed_messages(with_categories=true) %}
+			<!-- NOTE: this code has to be like this even if you have only one flash message in your Python code! 
+				assigns a function which gets all the flashed messages in the code to a variable -->
+			<!-- triggers the for loop if the Python code encountered an order to display a flash message -->
+			{% for category, message in messages %}
+			<!-- loops through the list of all the flash messages and prints them on the screen-->
+			<p class="{{ category }}">{{ message }}</p><!-- "category" variable lets CSS know which class to pick to apply styling"-->
+			<!--displays the flash message-->
+			{% endfor %}
+			{% endwith %}
+
+		</div>
+
+		<div class = "projects">
+			<a href = "http://www.tlcroyal.com/" target="_blank"><img class = "project1" src="{{ url_for('static', filename='my_projects/TLCROYAL.png') }}" alt="client company logo"></a>
+		</div>
+
+		<div class = "testimonial_container">
 			{% for testimonial in testimonials %}
+			<div  class = "actual_testimonial">
 				<h2 class = "name">{{ testimonial.name }}</h2>
 				<h4 class = "testimonial_message">{{ testimonial.testimonial }}</h4>
+			</div>
 			{% endfor %}
 		</div>
 
 		<form class = "contactform" action="/my_projects" method="post">
+			<label class = "form-header">Please leave your feedback if I built your website.</label>
 				{{ form.hidden_tag() }}<!--need to add CRSF token to protect the website from forgery attacks-->
 			<div class= "form_input_field">
 				{% if form.name.errors %}
@@ -157,7 +177,7 @@
 						<option value="russian" selected >English</option>
 						<option value="english" >Русский</option>
 					</select>
-					<input id = "translate_button" type="submit" name="translate" value="Translate to English">
+					<input id = "translate_button" type="submit" name="translate" value="ENG">
 				</form></li>
 			</ul>
 		</nav>

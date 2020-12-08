@@ -15,6 +15,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Gayathri:wght@100;400&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="{{ url_for('static', filename='about_me/about_mestyle.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='main_page/main_pagestyle.css') }}">
 
 </head>
 
@@ -23,14 +24,26 @@
 	<header>
 		<nav>
 			<div class= "logo">
-			<img src="{{ url_for('static', filename='favicon.svg') }}" alt="deer">
-			<p class="brand_name">BROWEBGEN</p>
+				<a href = "/main_page"><img src="{{ url_for('static', filename='favicon.svg') }}" alt="deer"></a>
+				<a href = "/main_page"><p class="brand_name">BROWEBGEN</p></a>
 			</div>
 			<ul class= "navbar">
 				<li class = "btn button1 navbarlist"><a href = "/my_projects">My projects</a></li>
 				<li class = "btn button2 navbarlist" ><a href = "/main_page">Main page</a></li>
 				<li class = "btn button3 navbarlist"><a href = "/blog">Blog</a></li>
 			</ul>
+
+			<form action="/my_projects" method="post" class="translator"><!--selector, which allows to translate-->
+	
+				<select id = "dropdown" name="operation"><!--"operation" is what helps to recognise this input field in the back end-->
+					<option value="russian" >English</option><!--vallue gets passed to the back end and then the logic desides what language to translate into-->
+					<option value="english" selected >Русский</option><!--selected by default so that the user doesn't need to change the language-->
+				</select>
+
+				<input id = "translate_button" type="submit" name="translate" value="RU"><!--the button, which sends the data to the back end-->
+			
+			</form>
+
 		</nav>
 	</header>
 
@@ -45,7 +58,7 @@
 				<p class="myname">
 					DMITRY MARTINOV
 				</p>
-				<img src= "{{ url_for('static', filename='about_me/me.jpg') }}" class= "mypicture" alt="Dmitry Martinov">
+				<img src= "{{ url_for('static', filename='about_me/me.jpg') }}" class= "mypicture" alt="Photo of the website author">
 			</div>
 		<section class= "story">
 			<p class= "para paragraph1">

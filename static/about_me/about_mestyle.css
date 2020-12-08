@@ -1,4 +1,18 @@
 
+
+/*=================
+Table of contents
+
+1. Body
+2. Responsivness
+
+===================*/
+
+/*-----------------
+1. Body
+-------------------*/
+
+
 *{
 	color: #f2e8d3;
 	text-decoration: none;
@@ -9,28 +23,14 @@ body{
      margin: 0px;
 }
 
-header, nav{
-	background: #D6B066;
-}
-
-dl dt a{
-	color: #D6B066;
-}
-
-p a {
-	color: #D6B066;
-}
-
 .mystory1{
     position: absolute;
     left: 48%;
-    top: 20%;
-    font-size: 80px;
+    font-size: 60px;
     font-family: 'Poiret One', cursive;
     animation-duration: 1s;
     animation-name: slideright;
 }
-
 
 @keyframes slideright {
     from {
@@ -45,8 +45,8 @@ p a {
   .mystory2{
     position: absolute;
     left: 48%;
-    top: 30%;
-    font-size: 80px;
+    margin-top: 120px;
+    font-size: 90px;
     font-family: 'Poiret One', cursive;
     animation-duration: 2s;
     animation-name: slideleft;
@@ -67,9 +67,9 @@ p a {
     position: absolute;
     writing-mode: vertical-rl;
     font-family: 'Comfortaa', cursive;
-    font-size: 25px;
+    font-size: 30px;
+    margin-top: 30px;
     left: 90%;
-    top: 22%;
     opacity: 0;
     animation-name: myname;
     animation-delay: 1s;
@@ -137,179 +137,34 @@ p a {
 
 .picturecontainer{
     background:#265e5a;
+    height: 32.9vw;
 }
 
 .mypicture{
-    width: 50%;
+    width: 49.4vw;
     margin: 0;
 }
 
-.navbar{
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 25px;
-	text-align: center;
-	margin:0;
-}
+/*-----------------
+2. Responsiveness
+-------------------*/
 
-.navbarlist{
-	padding: 20px;
-	margin: 10px;
-	border: solid 1px black;
-  	display: inline-flex;
-  	width: 200px;
-	justify-content: center;
-	z-index: 1;
-}
+@media screen and (max-width: 1195px) {
 
-img{
-	width:60px;
-    height:auto;
-    margin-top: 5px;
-}
-
-.logo{
-	text-align: center;
-	animation-name: logo;
-	opacity: 0;
-	animation-duration: 2s;
-	animation-delay: 0.2s;
-    animation-fill-mode: forwards;
-}
-
-.brand_name{
-	margin:0;
-	font-family: 'Gayathri', sans-serif;
-	color: #5E4B26;
-}
-
-/*logo animation*/
-
-@keyframes logo{  
-    0%{
-      opacity: 0;
+    .mystory1{
+        margin-top: 60px;
     }
-    10%{
-        opacity: 0.1;
-    }
-    20%{
-        opacity: 0.2;
-    }
-    30%{
-        opacity: 0.3;
-    }
-    40%{
-        opacity: 0.4;
-    }
-    50%{
-        opacity: 0.5;
-    }
-    60% {
-      opacity: 0.6;
-    }
-    70%{
-        opacity: 0.7;
-    }
-    80%{
-        opacity: 0.8;
-    }
-    90%{
-        opacity: 0.9;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  /*button animation*/
-  
-  a:active{
-      color: black;
-  }
-  
-  .btn{
-      position: relative;
-      padding: 14px 60px;
-      text-transform: uppercase;
-      overflow: hidden;
-  }
-  
-  .btn::before{
-      background: #5E4B26;
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      transition: all 0.6s ease;
-       z-index: -1;
-  }
-  
-  .button1::before{
-      width: 0%;
-      height: 100%;
-  }
-  
-  .button1:hover::before{
-        width: 100%;
-  }
-  
-  
-  .button2::before{
-      width: 100%;
-      height: 0%;
-  }
-  .button2:hover::before{
-        height: 100%;
-  }
-  
-  .button3::before{
-      width: 0%;
-      height: 100%;
-  }
-  .button3:hover::before{
-        width: 100%;
-  }
 
-  /* styling the footer */
+    .mystory2{
+        margin-top: 120px;
+    }
 
-footer{
-	height: 100px;
-	border-top: dotted 1px #5E4B26;
-  }
-  
-  .footerlist{
-	 display: inline;
-	text-decoration: none;
-  }
+    .myname{
+        margin-top: 30px;
+        font-size: 20px;
+    }
 
-  .contact{
-	text-decoration: none;
-	color: white;
-	margin: 10px;
-	font-family: 'Montserrat', sans-serif;
-  }
 
-  .footericon{
-	  width: 30px;
-  }
-
-  .footercontainer{
-	  text-align: center;
-  }
-
-  .attribution{
-	  font-size: 10px;
-  }
-
-  .copyright{
-	font-size: 10px;
-}
-
-  /*Responsive design part*/
-
-/*Break point for browser window*/
-
-@media screen and (max-width: 1194px) {
     .story{
         display: flex;
         flex-direction: column;
@@ -331,285 +186,115 @@ footer{
     }
 }
 
-@media screen and (max-width: 1090px) {
-
-        .navbarlist{
-            padding: 5px;
-            right: 2%;
-        }
-    
-        .navbar{
-            font-size: 20px;
-        }
+@media screen and (max-width: 900px) {
 
     .mystory1{
-        left: 48%;
-        top: 20%;
-        font-size: 60px;
+        margin-top: 30px;
+        font-size: 50px;
     }
 
     .mystory2{
-        left: 48%;
-        top: 27%;
-        font-size: 60px;
+        margin-top: 90px;
+        font-size: 50px;
     }
 
     .myname{
-        top: 22%;
-    }
-
-}
-
-/*For iPad*/
-@media screen and (max-width: 791px) {
-    .navbarlist{
-		padding: 5px;
-		right: 2%;
-	}
-
-	.navbar{
-		font-size: 20px;
-    }
-    
-    .picturecontainer{
-        height: 256px
-    }
-
-    .mystory1{
-        left: 47%;
-        top: 12%;
-        font-size: 60px;
-    }
-
-    .mystory2{
-        left: 47%;
-        top: 19%;
-        font-size: 60px;
-    }
-
-    .myname{
-        font-size: 15px;
-        left: 90%;
-        top: 20%;
+        margin-top: 30px;
+        font-size: 10px;
     }
 
     .story{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .paragraph1{
-        border-bottom: solid 1px white;
-        border-right: none;
-    }
-    
-    .paragraph2{
-        border-bottom: solid 1px white;
-        border-right: none;
-    }
-
-    .story > .para{
-        margin:0;
-    }
-
-}
-
-@media screen and (max-width: 742px) {
-    .navbarlist{
-          width: 150px;
+        padding: 20px;
+        margin: 30px;
     }
 }
 
-@media screen and (max-width: 593px) {
-    .navbarlist{
-        padding: 8px;
-          width: 130px;
+@media screen and (max-width: 800px) {
+
+    .mystory1{
+        left: 45%;
     }
 
-    .picturecontainer{
-        height: 198px
+    .mystory2{
+        left: 45%;
     }
 }
-/*For iPhone 6/7/8*/
+
+@media screen and (max-width: 600px) {
+
+    .mystory1{
+        left: 43%;
+    }
+
+    .mystory2{
+        left: 43%;
+    }
+}
+
+@media screen and (max-width: 615px) {
+
+    .mystory1{
+        margin-top: 10px;
+        font-size: 50px;
+    }
+
+    .mystory2{
+        margin-top: 60px;
+        font-size: 50px;
+    }
+
+    .myname{
+        margin-top: 20px;
+        font-size: 10px;
+    }
+
+    .story{
+        padding: 20px;
+        margin: 30px;
+    }
+}
 
 @media screen and (max-width: 414px) {
-    .navbarlist{
-        padding: 5px;
-        width: 200px;
-    }
-
-    .navbarlist{
-		right: 5%;
-	}
-
-    .picturecontainer{
-        height: 138px;
-    }
 
     .mystory1{
-        left: 47%;
-        top: 35%;
-        font-size: 30px;
+        left: 43%;
     }
 
     .mystory2{
-        left: 47%;
-        top: 39%;
+        left: 43%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+
+    .mystory1{
+        margin-top: 10px;
         font-size: 30px;
+        left: 45%;
+    }
+
+    .mystory2{
+        margin-top: 50px;
+        font-size: 30px;
+        left: 45%;
     }
 
     .myname{
+        margin-top: 5px;
         font-size: 10px;
-        left: 88%;
-        top: 37%;
     }
 
     .story{
-        margin: 20px;
         padding: 20px;
-    }
-
-    .contact{
-		font-size: 13px;
-      }
-
-	.footericon{
-		width: 30px;
-	}
-
-	.attribution{
-		font-size: 10px;
+        margin: 30px;
     }
 }
 
-/*For iPhone x/xs*/
-
-@media screen and (max-width: 375px) and (max-height: 812px){
-
-	.navbarlist{
-		padding: 3px;
-		right: 4%;
-	}
-
-	.navbar{
-		font-size: 15px;
-	}
-
-	.heading1{
-		font-size: 15px;
-	}
-
-	.contact{
-		font-size: 10px;
-      }
-      
-      img{
-		width: 40px;
-		height: auto;
-		margin-top: 5px;
-	}
-
-	.footericon{
-		width: 25px;
-	}
-
-	.attribution{
-		font-size: 7px;
-    }
-
-    .picturecontainer{
-        height: 125px
-    }
-    
-    .mystory1{
-        left: 47%;
-        top: 24%;
-        font-size: 30px;
-    }
-
-    .mystory2{
-        left: 47%;
-        top: 28%;
-        font-size: 30px;
-    }
+@media screen and (max-width: 320px) {
 
     .myname{
-        font-size: 10px;
-        left: 88%;
-        top: 28%;
-    }
-
-    .story{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .paragraph1{
-        border-bottom: solid 1px white;
-        border-right: none;
-    }
-    
-    .paragraph2{
-        border-bottom: solid 1px white;
-        border-right: none;
-    }
-
-    .story > .para{
-        margin:0;
-    }
-
-    .story{
-        padding: 10px;
-        margin: 20px;
-    }
-}
-
-/*For iPhone 6/7/8 IOS 11*/
-
-@media screen and (max-width: 375px) and (max-height: 667px){
-
-    
-    .mystory1{
-        left: 47%;
-        top: 31%;
-        font-size: 30px;
-    }
-
-    .mystory2{
-        left: 47%;
-        top: 36%;
-        font-size: 30px;
-    }
-
-    .myname{
-        font-size: 10px;
-        left: 88%;
-        top: 33%;
-    }
-
-}
-
-/*For Galaxy S9/S9+ Android 7.0*/
-
-@media screen and (max-width: 360px){
-
-    
-    .mystory1{
-        left: 47%;
-        top: 28%;
-        font-size: 30px;
-    }
-
-    .mystory2{
-        left: 47%;
-        top: 32%;
-        font-size: 30px;
-    }
-
-    .myname{
-        font-size: 10px;
-        left: 88%;
-        top: 30%;
+        margin-top: 5px;
+        font-size: 7px;
     }
 
 }

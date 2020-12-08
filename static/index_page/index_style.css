@@ -5,16 +5,20 @@ get rendered check the path to the link "a" for this button*/
   text-decoration: none;
 }
 
+.content{
+  display: flex;
+  flex-direction: column;
+}
+
 img{/*logo image*/
-	width:200px;
+	  width:200px;
     height:auto;
     margin-top: 5px;
-    color:green;
 }
 
 body{
 	background: black;
-  margin-top: 300px;
+  margin-top: 100px;
 }
 
 .logo{
@@ -39,7 +43,7 @@ body{
   font-size: 50px;
   text-transform: uppercase;
 	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: bold;
+  font-weight: bold;
   padding-bottom: 15px;
 	animation-name: call_to_action;
   transition-duration: 10s;
@@ -49,12 +53,16 @@ body{
 }
 
 .line2{
+  text-align: center;
+}
+
+.line3{
 	color: #f2e8d3;
 	margin-top: 1px;
 	text-align: center;
 	font-style: italic;
   padding-top: 15px;
-	opacity: 0;
+  opacity: 0;
 	font-size: 15px;
 	font-family: 'Source Sans Pro', sans-serif;
 	animation-name: quote;
@@ -63,21 +71,21 @@ body{
   animation-fill-mode: forwards;
 }
 
-a[href="/main_page"]{
+a[href="/main_page"]{/*color set for a specific link, instead of just "a" element*/
   color: #f2e8d3;
   padding: 5px;
   font-size: 30px;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
   position: relative;
+  width: 65px;
   border: 2px solid #f2e8d3;
-}/*color set for a specific link, instead of just "a" element*/
+}
 
 .button{
     opacity: 0;
     font-family: 'Anton', sans-serif;
     text-transform: uppercase;
-    left: 48%;
     animation-name: enter_button;
     animation-duration: 3s;
     animation-delay: 3s;
@@ -164,7 +172,7 @@ a[href="/main_page"]{
 @keyframes quote{
 	0% {
 		opacity: 0;
-     padding-top: 15px;
+    padding-top: 15px;
 	}
 	100% {
 		opacity: 1;
@@ -181,7 +189,6 @@ a[href="/main_page"]{
 	}
 }
 
-
 .button::before{
   background: #D6B066;
   content: "";
@@ -191,7 +198,7 @@ a[href="/main_page"]{
   transform: translate(-50%,-50%);
   z-index: -1;
   transition: all 0.6s ease;
-}
+  }
 
 .button::before{
   width: 55%;
@@ -203,111 +210,85 @@ a[href="/main_page"]{
 }
 
 .button:active{
-  color:black;
+color:black;
 }
 
 /*Responsive design part*/
 
-@media screen and (max-width: 1019px){
-  
-  .button{
-    left: 46%;
-}
-
-}
-
  /*iPad*/
-@media screen and (max-width: 768px) {
-    
-  img{/*logo image*/
-      width:200px;
-      height:auto;
-      margin-bottom: 5px;
-      color:green;
+
+ @media screen and (max-width: 1024px) {
+  body{
+    margin-top: 300px;
   }
+
+  .button:active{
+    color:#D6B066;
+  }
+}
+
+ @media screen and (max-width: 834px) {
+  body{
+    margin-top: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
 
   .brand_name{
     font-size: 30px;
   }
   
-  .line1 {
-        font-size: 40px;
-    }
-
-    a{
-      font-size: 30px;
-    }
-
-    .button:active{
-    color:#D6B066;
+  .line1{
+      font-size: 40px;
   }
 
-  .button{
-    left: 44%;
+  a{
+    font-size: 30px;
   }
 }
 
-@media screen and (max-width: 450px){
-  
-    .button{
-      left: 40%;
-  }
-  
-  }
- /*iPhone 6/7/8 plus iOS11*/
 @media screen and (max-width: 414px) {
     
-  img{/*logo image*/
+  img{
     width: 130px;
-}
+  }
 
   .brand_name{
     font-size: 20px;
-}
+  }
 
-.logo{
-  margin-bottom: 30px;
-  position: absolute;
-  top: 10%;
-  left: 33%;
-}
+  .logo{
+    margin-bottom: 30px;
+    position: absolute;
+    top: 20%;
+    left: 34%;
+  }
   
   .line1 {
-        font-size: 20px;
+      font-size: 20px;
+      margin-top: 200px;
     }
 
     a[href="/main_page"]{
       font-size: 20px;
     }
-
-    .button:active{
-    color:#D6B066;
-    }
-
-    .button{
-      left: 41%;
-    }
   }
- /*iPhone 6/7/8 iOS11*/
-  @media screen and (max-width: 375px) {
-    
-    img{/*logo image*/
-      width: 130px;
-  }
-  
+
+  @media screen and (max-width: 375px){
     .brand_name{
       font-size: 20px;
-  }
+   }
   
-  .logo{
-    margin-bottom: 30px;
-    position: absolute;
-    top: 10%;
-    left: 32%;
-  }
+    .logo{
+      margin-bottom: 20px;
+      position: absolute;
+      top: 20%;
+      left: 33%;
+    }
     
-    .line1 {
-          font-size: 20px;
+    .line1{
+        font-size: 20px;
       }
   
       a[href="/main_page"]{
@@ -317,37 +298,19 @@ a[href="/main_page"]{
       .button:active{
       color:#D6B066;
       }
-  
-      .button{
-        left: 41%;
-      }
     }
 
-
-  /*Galaxy S9 Android 7.0*/
 @media screen and (max-width: 360px){
+    .line1{
+      margin-top: 100px;
+    }
+  }
 
-  img{/*logo image*/
-    width:130px;
-    height:auto;
-    margin-bottom: 5px;
-    color:green;
-}
-
-  .brand_name{
-    font-size: 20px;
-}
-
-  .button{
-    left: 42%;
-}
-
-.line1{
-  font-size: 20px;
-}
-
-a[href="/main_page"]{
-  font-size: 20px;
-}
-
+@media screen and (max-width: 320px){
+  .logo{
+    margin-bottom: 40px;
+    position: absolute;
+    top: 15%;
+    left: 30%;
+  }
 }

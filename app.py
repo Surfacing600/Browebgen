@@ -38,6 +38,7 @@ class form_database(db.Model):# table model or table with the name "form_databas
     name = db.Column(db.String(50), nullable=False)#specifies a name column
     email = db.Column(db.String(50), nullable=False)#specifies an email column
     message = db.Column(db.String(200), nullable=False)#specifies a message column
+    privacy_pol_checkbox = db.Column(db.Boolean, default=False, nullable=False)
 
 class testimonial_database(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -68,7 +69,7 @@ def form():
             #on the function to choose english version of HTML
 
     if form.validate_on_submit():#will tell me if the form was validated when it was submitted
-        flash("Your message has been sent successfully. I'll be in touch shortly.")#the message to notify the user of a successfull submition of the form
+        flash("Your message has been sent successfully. I'll be in touch shortly.", "success_flash_message")#the message to notify the user of a successfull submition of the form, the second argument is a category to enable different styling for different flash messages
         new_data = form_database(name=form.name.data, email=form.email.data, message=form.message.data)#grabs user input from the form and prepares it for the database push
      
 
@@ -101,6 +102,10 @@ def form():
             return redirect('/main_page')
         except:
             return redirect('/main_page')#redirects to the same page if something went wrong
+    
+    elif not form.validate_on_submit() and request.method == "POST":#if the form failed validation after the data was sent by the user then flash the error massage below
+        flash("Ooops. Please check the fields below.", "error_flash_message")#the message to notify the user of a mistake upon submition of the form, the second argument is a category to enable different styling for different flash messages
+    
     return render_template("/Pages/Main page/main_page.html", form=form)#renders the template at first access to the page and displays the form on the page
 
 
@@ -140,7 +145,7 @@ def testimonials():
             language2 = "english"
             return render_template("/Pages/My projects/my_projects.html", b=language2, form=form, testimonials=testimonials)#displays form AND name and testimonial on the page after rendering
     if form.validate_on_submit():#will tell me if the form was walidated when it was submitted
-        flash("Your message has been sent successfully. I'll be in touch shortly.")
+        flash("Thank you for leaving your feedback. It's been added below.", "success_flash_message")
         new_testimonial = testimonial_database(name=form.name.data, testimonial=form.testimonial.data)
      
 
@@ -163,6 +168,10 @@ def testimonials():
             return redirect('/my_projects')#redirects to "my_projects" page
         except:#if there is an error it just loads the page again
             return redirect('/my_projects')
+
+    elif not form.validate_on_submit() and request.method == "POST":#if the form failed validation after the data was sent by the user then flash the error massage below
+        flash("Ooops. Please check the fields below.", "error_flash_message")#the message to notify the user of a mistake upon submition of the form, the second argument is a category to enable different styling for different flash messages
+
     return render_template("/Pages/My projects/my_projects.html", form=form, testimonials=testimonials)#displays form AND name and testimonial on the page after rendering
 
 

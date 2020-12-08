@@ -10,18 +10,6 @@ body{
 	 margin: 0px;
 }
 
-header, nav{
-	background: #D6B066;
-}
-
-dl dt a{
-	color: #D6B066;
-}
-
-p a {
-	color: #D6B066;
-}
-
 .navbar{
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 25px;

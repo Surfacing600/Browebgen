@@ -27,33 +27,32 @@
 	<header>
 		<nav>
 			<div class="logo">
-				<img src="{{ url_for('static', filename='favicon.svg') }}" alt="deer">
-				<p class="brand_name">BROWEBGEN</p>
+				<a href = "/main_page"><img src="{{ url_for('static', filename='favicon.svg') }}" alt="deer"></a>
+				<a href = "/main_page"><p class="brand_name">BROWEBGEN</p></a>
 			</div>
-
+			
 			<ul class="navbar">
 				<li class="btn button1 navbarlist"><a href="/my_projects">My projects</a></li>
 				<li class="btn button2 navbarlist"><a href="/blog">Blog</a></li>
 				<li class="btn button3 navbarlist"><a href="/about_me">About me</a></li>
-				<li class="translator navbarlist">
-
-					<form action="/main_page" method="post">
-						<!--selector, which allows to translate-->
-
-						<select id="dropdown" name="operation">
-							<!--"operation" is what helps to recognise this input field in the back end-->
-							<option value="russian">English</option>
-							<!--vallue gets passed to the back end and then the logic desides what language to translate into-->
-							<option value="english" selected>Русский</option>
-							<!--selected by default so that the user doesn't need to change the language-->
-						</select>
-
-						<input id="translate_button" type="submit" name="translate" value="Translate to Russian">
-						<!--the button, which sends the data to the back end-->
-
-					</form>
-				</li>
 			</ul>
+		
+	
+			<form action="/main_page" method="post" class="translator">
+				<!--selector, which allows to translate-->
+
+				<select id="dropdown" name="operation">
+					<!--"operation" is what helps to recognise this input field in the back end-->
+					<option value="russian">English</option>
+					<!--vallue gets passed to the back end and then the logic desides what language to translate into-->
+					<option value="english" selected>Русский</option>
+					<!--selected by default so that the user doesn't need to change the language-->
+				</select>
+
+				<input id="translate_button" type="submit" name="translate" value="RU">
+				<!--the button, which sends the data to the back end-->
+
+			</form>
 		</nav>
 	</header>
 
@@ -61,101 +60,25 @@
 
 		<section class="section1">
 
-			<p class="statement">Get a brochure website for a competitive price for your small business.</p>
+			<p class="statement">Get a competitively priced brochure website for your small business.</p>
 
 		</section>
 
-		<form class="contactform" action="/main_page" method="post">
+		
+		<div>
 
-			<div class="form_input_field">
+			{% with messages = get_flashed_messages(with_categories=true) %}
+			<!-- NOTE: this code has to be like this even if you have only one flash message in your Python code! 
+				assigns a function which gets all the flashed messages in the code to a variable -->
+			<!-- triggers the for loop if the Python code encountered an order to display a flash message -->
+			{% for category, message in messages %}
+			<!-- loops through the list of all the flash messages and prints them on the screen-->
+			<p class="{{ category }}">{{ message }}</p><!-- "category" variable lets CSS know which class to pick to apply styling"-->
+			<!--displays the flash message-->
+			{% endfor %}
+			{% endwith %}
 
-				{% with messages = get_flashed_messages() %}
-				<!-- NOTE: this code has to be like this even if you have only one flash message in your Python code! 
-					assigns a function which gets all the flashed messages in the code to a variable -->
-				<!-- triggers the for loop if the Python code encountered an order to display a flash message -->
-				{% for message in messages %}
-				<!-- loops through the list of all the flash messages and prints them on the screen-->
-				<p class="success_flash_message">{{ message }}</p>
-				<!--displays the flash message-->
-				{% endfor %}
-
-				{% endwith %}
-
-				<label>Contact me to get a quote today!</label>
-				{{ form.hidden_tag() }}
-				<!--need to add CRSF token to protect the website from forgery attacks-->
-			</div>
-
-			<div class="form_input_field">
-				{% if form.name.errors %}
-				{{ form.name(placeholder="Your name") }}
-				<!--actual input field from the form-->
-			</div>
-
-			<div>
-				{% for error in form.name.errors %}
-				<span class="form_error">{{ error }}</span>
-				{% endfor %}
-			</div>
-
-			<div class="form_input_field">
-				{% else %}
-				{{ form.name(placeholder="Your name") }}
-				{% endif %}
-			</div>
-
-			<div class="form_input_field">
-				{% if form.email.errors %}
-				{{ form.email(placeholder="Your email") }}
-				<!--actual input field from the form-->
-			</div>
-
-			<div>
-				{% for error in form.email.errors %}
-				<span class="form_error"> {{ error }} </span>
-				{% endfor %}
-			</div>
-
-			<div class="form_input_field">
-				{% else %}
-				{{ form.email(placeholder="Your email")}}
-				{% endif %}
-			</div>
-
-			<div class="form_input_field">
-				{% if form.message.errors %}
-				{{ form.message(placeholder="Your message")}}
-				<!--actual input field from the form-->
-			</div>
-
-			<div>
-				{% for error in form.message.errors %}
-				<span class="form_error"> {{ error }} </span>
-				{% endfor %}
-			</div>
-
-			<div class="form_input_field">
-				{% else %}
-				{{ form.message(placeholder="Your needs") }}
-				{% endif %}
-			</div>
-
-			<div class="form_input_field">
-				{{ form.submit()}}
-				<!--actual input field from the form-->
-			</div>
-
-			<div class="recaptcha_field">
-				{{ form.recaptcha }}
-			</div>
-
-			<div>
-				{% for error in form.recaptcha.errors %}
-				<span class="form_error"> {{ error }} </span>
-				{% endfor %}
-			</div>
-
-		</form>
+		</div>
 
 		<div class="main_section_container">
 
@@ -177,7 +100,7 @@
 				<p>For example, a small plumbing company would build a brochure website with a homepage to
 					display contact information, an ‘about us’ page describing the company, and maybe a few
 					photos of their work. There is a lot of good website builders out there that provide an
-					outside the box solution, read my blog on why you would and wouldn't want using these to build your
+					outside the box solution, <a href="#" target="_blank">read my blog</a> on why you would and wouldn't want using these to build your
 					website.
 					If you don’t have time to create a website yourself or want to get a more tailored solution than the
 					website builders provide, then why not contacting me today
@@ -240,6 +163,103 @@
 
 		</div>
 
+		<form class="contactform" action="/main_page" method="post">
+			
+			<label class = "form_header">Contact me to get a quote today!</label>
+			{{ form.hidden_tag() }}
+			<!--need to add CRSF token to protect the website from forgery attacks-->
+
+			<div class="form_input_field">
+				{% if form.name.errors %}
+				{{ form.name(placeholder="Name") }}
+				<!--actual input field from the form-->
+			</div>
+
+			<div class="form_input_field">
+				{% for error in form.name.errors %}
+				<span class="form_error">{{ error }}</span>
+				{% endfor %}
+			</div>
+
+			<div class="form_input_field">
+				{% else %}
+				{{ form.name(placeholder="Name") }}
+				{% endif %}
+			</div>
+
+			<div class="form_input_field">
+				{% if form.email.errors %}
+				{{ form.email(placeholder="Email") }}
+				<!--actual input field from the form-->
+			</div>
+
+			<div class="form_input_field">
+				{% for error in form.email.errors %}
+				<span class="form_error"> {{ error }} </span>
+				{% endfor %}
+			</div>
+
+			<div class="form_input_field">
+				{% else %}
+				{{ form.email(placeholder="Email")}}
+				{% endif %}
+			</div>
+
+			<div class="form_input_field">
+				{% if form.message.errors %}
+				{{ form.message(placeholder="Your needs")}}
+				<!--actual input field from the form-->
+			</div>
+
+			<div class="form_input_field">
+				{% for error in form.message.errors %}
+				<span class="form_error"> {{ error }} </span>
+				{% endfor %}
+			</div>
+
+			<div class="form_input_field">
+				{% else %}
+				{{ form.message(placeholder="Your needs") }}
+				{% endif %}
+			</div>
+
+			<div class="form_input_field">
+				{% if form.privacy_pol_checkbox.errors %}
+				{{ form.privacy_pol_checkbox() }}
+				<label class = "privacy_policy">I have read and agree to Browebgen<a href = "#">Privacy Policy</a></label>
+				<!--actual input field from the form-->
+			</div>
+
+			<div class="form_input_field">
+				{% for error in form.privacy_pol_checkbox.errors %}
+				<span class="form_error"> {{ error }} </span>
+				{% endfor %}
+			</div>
+
+			<div class="form_input_field">
+				{% else %}
+				{{ form.privacy_pol_checkbox() }}
+				<label class = "privacy_policy">I have read and agree to Browebgen <a href = "#" class ="hyperlink">Privacy Policy</a></label>
+				{% endif %}
+			</div>
+
+			<div class="form_input_field">
+				{{ form.submit()}}
+				<!--actual input field from the form-->
+			</div>
+
+			<div class="recaptcha_field">
+				{{ form.recaptcha }}
+			</div>
+
+			<div class="form_input_field">
+				{% for error in form.recaptcha.errors %}
+				<span class="form_error"> {{ error }} </span>
+				{% endfor %}
+			</div>
+
+		</form>
+
 	</main>
 
 	<footer>
@@ -251,12 +271,12 @@
 						target="_blank" rel="noopener noreferrer"><img
 							src="{{ url_for('static', filename='email.svg') }}" class="footericon"></a><a
 						href="mailto:dmimart@hotmail.com?subject=Would like to ask for my website&body=Hi Dima,"
-						target="_blank" rel="noopener noreferrer" class="contact">Contact via email</a></li>
+						target="_blank" rel="noopener noreferrer" class="contact hyperlink">Contact via email</a></li>
 				<li class="footerlist"><a href="https://api.whatsapp.com/send?phone=077487731324" target="_blank"
-						rel="noopener noreferrer" class="socmed"><img
+						rel="noopener noreferrer"><img
 							src="{{ url_for('static', filename='whatsapp.svg') }}" class="footericon"></a><a
 						href="https://api.whatsapp.com/send?phone=077487731324" target="_blank"
-						rel="noopener noreferrer" class="contact">Contact via WhatsApp</a></li>
+						rel="noopener noreferrer" class="contact hyperlink">Contact via WhatsApp</a></li>
 			</ul>
 			<p class="attribution">Icons on this page made by<a class="hyperlinks"
 					href="https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer"> Freepik
@@ -283,23 +303,21 @@
 				<img src="{{ url_for('static', filename='favicon.svg') }}" alt="deer">
 				<p class="brand_name">BROWEBGEN</p>
 			</div>
-
 			<ul class="navbar">
 				<li class="btn button1 navbarlist"><a href="/my_projects">Мои проекты</a></li>
 				<li class="btn button2 navbarlist"><a href="/blog">Блог</a></li>
 				<li class="btn button3 navbarlist"><a href="/about_me">Обо мне</a></li>
-				<li class="translator navbarlist">
-
-					<form action="/main_page" method="post">
-
-						<select id="dropdown" name="operation">
-							<option value="russian" selected>English</option>
-							<option value="english">Русский</option>
-						</select>
-						<input id="translate_button" type="submit" name="translate" value="Translate to English">
-					</form>
-				</li>
 			</ul>
+			</div>
+			<form action="/main_page" method="post" class="translator">
+
+				<select id="dropdown" name="operation">
+					<option value="russian" selected>English</option>
+					<option value="english">Русский</option>
+				</select>
+				<input id="translate_button" type="submit" name="translate" value="ENG">
+			</form>
+
 		</nav>
 	</header>
 
