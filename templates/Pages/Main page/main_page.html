@@ -26,9 +26,11 @@
 	<!--checks if "b" variable specified in the back end is equal to value="english" in one option selector below-->
 	<header>
 		<nav>
-			<div class="logo">
-				<a href = "/main_page"><img src="{{ url_for('static', filename='favicon.svg') }}" alt="deer"></a>
-				<a href = "/main_page"><p class="brand_name">BROWEBGEN</p></a>
+			<div class= "logo_container"><!--this container is needed to position logo at the center of container and control the logo container width to avoid wide clickable area of the brand name's hyperlink-->
+				<div class= "logo">
+					<a href = "/main_page"><img src="{{ url_for('static', filename='favicon.svg') }}" alt="deer"></a>
+					<a href = "/main_page"><p class="brand_name">BROWEBGEN</p></a>
+				</div>
 			</div>
 			
 			<ul class="navbar">
