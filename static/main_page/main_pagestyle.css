@@ -580,6 +580,11 @@ footer{
         width: 190px;
     }
 
+    .form_input_field{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
     .nav_links{/*to ensure that the text is in the middle of the buttons on mobile version*/
         width: 200px;
         padding: 0;
