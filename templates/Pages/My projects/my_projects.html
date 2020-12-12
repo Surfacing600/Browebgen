@@ -96,7 +96,7 @@
 					{{ form.name(placeholder="Your name", class = "d") }}</p><!--actual input field from the form-->
 			</div>
 
-			<div>
+			<div class="form_input_field">
 				{% for error in form.name.errors %}
 					<span class= "form_error">{{ error }}</span>
 				{% endfor %}
@@ -113,7 +113,7 @@
 					{{ form.testimonial(placeholder="Your testimonial") }}<!--actual input field from the form-->
 			</div>
 
-			<div>
+			<div class="form_input_field">
 				{% for error in form.testimonial.errors %}
 					<span class= "form_error"> {{ error }} </span>
 				{% endfor %}
@@ -133,7 +133,7 @@
 				{{ form.recaptcha }}
 			</div>
 
-			<div>
+			<div class="form_input_field">
 				{% for error in form.recaptcha.errors %}
 					<span class= "form_error"> {{ error }} </span>
 				{% endfor %}

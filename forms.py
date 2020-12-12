@@ -23,7 +23,7 @@ class contact_form(FlaskForm):
 
 class testimonial(FlaskForm):
 
-    recaptcha = RecaptchaField()
+    recaptcha = RecaptchaField(validators=[Recaptcha(message="Please verify that you're not a robot")])
 
     name = StringField("Name", validators=[DataRequired(),
                                  Length(min=3, max=10)])
