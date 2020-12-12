@@ -19,6 +19,7 @@ a{
 	color: #f2e8d3;
     text-decoration: none;
     font-family: 'Source Sans Pro', sans-serif;
+
 }
 
 body{
@@ -117,8 +118,18 @@ img{
     list-style-type: none;
 }
 
+.nav_links{/* allows to make the whole nav button space clickable*/
+    display: block;
+    padding: 10px;
+}
+
+.nav_links, .btn{/*to ensure that the text is in the middle of the buttons on mobile version*/
+    width: 320px;
+}
+
 .navbarlist{
-  	display: inline-flex;
+      display: inline-flex;
+      padding: 0;
 }
 
 a:active{
@@ -129,11 +140,9 @@ a:active{
   position: relative;
   text-transform: uppercase;
   overflow: hidden;
-  padding: 10px;
   margin: 10px;
   border: solid 1px black;
   display: inline-flex;
-  width: 300px;
   justify-content: center;
   z-index: 1;
 }
@@ -205,6 +214,10 @@ a:active{
 /*-----------------
  2. Body
 -------------------*/
+
+.icon{
+    text-align: center;
+}
 
 .main_section_container{
     display: flex;
@@ -499,6 +512,41 @@ footer{
 /*Break points for browser window*/
 
 @media screen and (max-width: 1194px) {
+
+
+    .btn{
+        box-shadow: 0 6px 10px #5E4B26;
+        outline: none;
+  }
+    .btn:active {
+        /* set time duration to your needs */
+        animation: gradient 80ms;
+        background: #5E4B26;
+        box-shadow: none;
+  }
+
+  .nav_links, .btn{/*to ensure that the text is in the middle of the buttons on mobile version*/
+    width: 320px;
+}
+
+  @keyframes gradient {
+      0% {
+        background: radial-gradient(circle at center, #5E4B26 0%, #D6B066 0%, #D6B066 100%);
+      }
+      25% {
+        background: radial-gradient(circle at center, #5E4B26 24%, #D6B066 25%, #D6B066 100%);
+      }
+      50% {
+        background: radial-gradient(circle at center, #5E4B26 49%, #D6B066 50%, #D6B066 100%);
+      }
+      75% {
+        background: radial-gradient(circle at center, #5E4B26 74%, #D6B066 75%, #D6B066 100%);
+      }
+      100% {
+        color: #D6B066;
+        background: radial-gradient(circle at center, #5E4B26 99%, #D6B066 100%, #D6B066 100%);
+      }
+    }
     
     .logo{
         position: relative;/*a relatively positioned element is offset relative to its original position in the page flow it allows to move the logo within the container*/
@@ -524,6 +572,18 @@ footer{
         font-size: 15px;
         gap: 10px;
         margin: 30px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .btn{/*to ensure that the text is in the middle of the buttons on mobile version*/
+        width: 190px;
+    }
+
+    .nav_links{/*to ensure that the text is in the middle of the buttons on mobile version*/
+        width: 200px;
+        padding: 0;
+        font-size: 20px;
     }
 }
 
@@ -560,7 +620,7 @@ footer{
         position: relative;/*a relatively positioned element is offset relative to its original position in the page flow it allows to move the logo within the container*/
         left: 7px;
     }
-    
+
     .translator{
         right: 10px;
     }
@@ -683,6 +743,7 @@ footer{
 }
 
 @media screen and (max-width: 320px){
+
 
     .form_header{
         font-size: 15px;

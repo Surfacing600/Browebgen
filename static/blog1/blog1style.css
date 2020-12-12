@@ -380,39 +380,6 @@ thead th:nth-child(1) {
         width: 70%;
         margin-left: 15%;
     }
-
-    @keyframes gradient {
-        0% {
-          background: radial-gradient(circle at center, #5E4B26 0%, #D6B066 0%, #D6B066 100%);
-        }
-        25% {
-          background: radial-gradient(circle at center, #5E4B26 24%, #D6B066 25%, #D6B066 100%);
-        }
-        50% {
-          background: radial-gradient(circle at center, #5E4B26 49%, #D6B066 50%, #D6B066 100%);
-        }
-        75% {
-          background: radial-gradient(circle at center, #5E4B26 74%, #D6B066 75%, #D6B066 100%);
-        }
-        100% {
-          color: #D6B066;
-          background: radial-gradient(circle at center, #5E4B26 99%, #D6B066 100%, #D6B066 100%);
-        }
-      }
-
-      .btn {
-        box-shadow: 0 6px 10px #5E4B26;
-        outline: none;
-      }
-      .btn:active {
-        /* set time duration to your needs */
-        animation: gradient 80ms;
-        background: #5E4B26;
-        box-shadow: none;
-      }
-      
-      
-
 }
 
 

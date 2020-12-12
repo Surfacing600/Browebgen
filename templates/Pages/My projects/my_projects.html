@@ -34,9 +34,9 @@
 			</div>
 
 			<ul class= "navbar">
-				<li class = "btn button1 navbarlist"><a href = "/blog">Blog</a></li>
-				<li class = "btn button2 navbarlist" ><a href = "/main_page">Main page</a></li>
-				<li class = "btn button3 navbarlist"><a href = "/about_me">About me</a></li>
+				<li class = "btn button1 navbarlist"><a href = "/blog" class="nav_links">Blog</a></li>
+				<li class = "btn button2 navbarlist" ><a href = "/main_page" class="nav_links">Main page</a></li>
+				<li class = "btn button3 navbarlist"><a href = "/about_me" class="nav_links">About me</a></li>
 			</ul>
 					<form action="/my_projects" method="post" class="translator"><!--selector, which allows to translate-->
 	
@@ -56,7 +56,7 @@
 
 		<section class="section1">
 
-			<p class="statement">My projects and feedback.</p>
+			<p class="statement">My projects and feedback</p>
 
 		</section>
 
@@ -89,7 +89,7 @@
 		</div>
 
 		<form class = "contactform" action="/my_projects" method="post">
-			<label class = "form-header">Please leave your feedback if I built your website.</label>
+			<p class = "form-header">Please leave your feedback if I built your website</p>
 				{{ form.hidden_tag() }}<!--need to add CRSF token to protect the website from forgery attacks-->
 			<div class= "form_input_field">
 				{% if form.name.errors %}

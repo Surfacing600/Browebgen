@@ -8,7 +8,7 @@
 /*blogs styling*/
 
   .blog1image{
-    width: 40%;
+    width: 900px;
     filter: grayscale(100%);
 }
 
@@ -32,6 +32,23 @@
 
 /*Responsive design part*/
 
+
+@media screen and (max-width: 1024px) {
+
+    .blog1image{
+        width: 90%;
+        filter: grayscale(0%);
+    }
+
+    .blog1heading{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 20px;
+        transform: translate(-50%, -50%);
+    }
+}
+
 @media screen and (max-width: 768px) {
 
     
@@ -48,7 +65,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        font-size: 30px;
+        font-size: 20px;
         transform: translate(-50%, -50%);
     }
 
