@@ -10,7 +10,7 @@ class contact_form(FlaskForm):
 
     recaptcha = RecaptchaField(validators=[Recaptcha(message="Please verify that you're not a robot")])#Displays the message specified instead of a defoult one
 
-    name = StringField("Name", validators=[DataRequired(),#"Name" is used as a lable and bassed to html using jinja
+    name = StringField("Name", validators=[DataRequired(),#"Name" is used as a label and bassed to html using jinja
                                  Length(min=3, max=10)])#sets length for the data input
     email = StringField("Email",
                         validators=[DataRequired(), Email()])#Email() validator check if data imputed follows email standard

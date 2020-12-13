@@ -513,6 +513,9 @@ footer{
 
 @media screen and (max-width: 1194px) {
 
+      .btn::before{
+        display: none;
+    }
 
     .btn{
         box-shadow: 0 6px 10px #5E4B26;
