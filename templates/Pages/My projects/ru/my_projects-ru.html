@@ -21,7 +21,6 @@
 
 <body>
 
-
 	<header>
 
 		<nav>
@@ -34,12 +33,13 @@
 			</div>
 
 			<ul class= "navbar">
-				<li class = "btn button1 navbarlist"><a href = "/blog" class="nav_links">Blog</a></li>
-				<li class = "btn button2 navbarlist" ><a href = "/main_page" class="nav_links">Main page</a></li>
-				<li class = "btn button3 navbarlist"><a href = "/about_me" class="nav_links">About me</a></li>
+				<li class = "btn button1 navbarlist"><a href = "/blog/ru" class="nav_links">Блог</a></li>
+				<li class = "btn button2 navbarlist" ><a href = "/main_page/ru" class="nav_links">Главная</a></li>
+				<li class = "btn button3 navbarlist"><a href = "/about_me/ru" class="nav_links">Обо мне</a></li>
 			</ul>
 
-			<a href="/my_projects/ru" class="nav_links">RU</a>
+			<a href="/my_projects" class="nav_links">ENG</a>
+		
 		</nav>
 
 	</header>
@@ -48,7 +48,7 @@
 
 		<section class="section1">
 
-			<p class="statement">My projects and feedback</p>
+			<p class="statement">Мои проекты и отзывы</p>
 
 		</section>
 
@@ -80,12 +80,12 @@
 			{% endfor %}
 		</div>
 
-		<form class = "contactform" action="/my_projects" method="post">
-			<p class = "form-header">Please leave your feedback if I built your website</p>
+		<form class = "contactform" action="/my_projects/ru" method="post">
+			<p class = "form-header">Оставьте ваш отзыв если я сделал вам вебсайт</p>
 				{{ form.hidden_tag() }}<!--need to add CRSF token to protect the website from forgery attacks-->
 			<div class= "form_input_field">
 				{% if form.name.errors %}
-					{{ form.name(placeholder="Your name") }}</p><!--actual input field from the form-->
+					{{ form.name(placeholder="Имя") }}</p><!--actual input field from the form-->
 			</div>
 
 			<div class="form_input_field">
@@ -96,13 +96,13 @@
 
 			<div class= "form_input_field">
 				{% else %}
-					{{ form.name(placeholder="Your name") }}
+					{{ form.name(placeholder="Имя") }}
 				{% endif %}
 			</div>
 
 			<div class= "form_input_field">
 				{% if form.testimonial.errors %}
-					{{ form.testimonial(placeholder="Your testimonial") }}<!--actual input field from the form-->
+					{{ form.testimonial(placeholder="Отзыв") }}<!--actual input field from the form-->
 			</div>
 
 			<div class="form_input_field">
@@ -113,7 +113,7 @@
 
 			<div class= "form_input_field">
 				{% else %}
-					{{ form.testimonial(placeholder="Your testimonial") }}
+					{{ form.testimonial(placeholder="Отзыв") }}
 				{% endif %}
 			</div>
 
@@ -139,13 +139,14 @@
 
 		<div class= "footercontainer">
 			<ul class="footer">
-				<li class = "footerlist"><a href="mailto:dmimart@hotmail.com?subject= I'd like to ask for my website&body=Hi Dima," target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='email.svg') }}" class = "footericon" alt="envelope"></a><a href="mailto:dmimart@hotmail.com?subject=Would like to ask for my website&body=Hi Dima," target="_blank" rel="noopener noreferrer" class = "contact">Contact via email</a></li>
-				<li class = "footerlist"><a href="https://api.whatsapp.com/send?phone=+447487731324" target="_blank" rel="noopener noreferrer" class = "socmed"><img src="{{ url_for('static', filename='whatsapp.svg') }}" class = "footericon" alt="WhatsApp symbol"></a><a href="https://api.whatsapp.com/send?phone=077487731324" target="_blank" rel="noopener noreferrer" class = "contact">Contact via WhatsApp</a></li>
+				<li class = "footerlist"><a href="mailto:dmimart@hotmail.com?subject= I'd like to ask for my website&body=Hi Dima," target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='email.svg') }}" class = "footericon" alt="envelope"></a><a href="mailto:dmimart@hotmail.com?subject=Would like to ask for my website&body=Hi Dima," target="_blank" rel="noopener noreferrer" class = "contact">Связаться через email</a></li>
+				<li class = "footerlist"><a href="https://api.whatsapp.com/send?phone=+447487731324" target="_blank" rel="noopener noreferrer" class = "socmed"><img src="{{ url_for('static', filename='whatsapp.svg') }}" class = "footericon" alt="WhatsApp symbol"></a><a href="https://api.whatsapp.com/send?phone=+447487731324" target="_blank" rel="noopener noreferrer" class = "contact">Связаться через WhatsApp</a></li>
 			</ul>
-			<p class = "attribution">Icons on this page made by<a class = "hyperlinks" href = "https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer"> Freepik </a> and <a class = "hyperlinks" href = "https://www.flaticon.com/authors/pixel-perfect" target="_blank" rel="noopener noreferrer"> Pixel perfect </a> from <a class = "hyperlinks" href = "https://www.flaticon.com/" target="_blank" rel="noopener noreferrer"> www.flaticon.com</a></p>
-			<p class="copyright">Copyright © 2020. BROWEBGEN.COM. All rights reserved.</p>
+			<p class = "attribution">Иконки на этом вебсайте сделаны<a class = "hyperlinks" href = "https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer"> Freepik </a> и <a class = "hyperlinks" href = "https://www.flaticon.com/authors/pixel-perfect" target="_blank" rel="noopener noreferrer"> Pixel perfect </a> from <a class = "hyperlinks" href = "https://www.flaticon.com/" target="_blank" rel="noopener noreferrer"> www.flaticon.com</a></p>
+			<p class="copyright">Авторские права © 2020. BROWEBGEN.COM. All rights reserved.</p>
 		</div>
 
 	</footer>
 	
 </body>
+

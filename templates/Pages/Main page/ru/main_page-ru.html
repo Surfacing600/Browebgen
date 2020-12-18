@@ -22,6 +22,7 @@
 </head>
 
 <body>
+	{% if b == english %}
 	<!--checks if "b" variable specified in the back end is equal to value="english" in one option selector below-->
 	<header>
 		<nav>
@@ -33,28 +34,13 @@
 			</div>
 			
 			<ul class="navbar">
-				<li class="btn button1 navbarlist"><a href="/my_projects" class="nav_links">My projects</a></li>
-				<li class="btn button2 navbarlist"><a href="/blog" class="nav_links">Blog</a></li>
-				<li class="btn button3 navbarlist"><a href="/about_me" class="nav_links">About me</a></li>
+				<li class="btn button1 navbarlist"><a href="/my_projects/ru" class="nav_links">Мои проекты</a></li>
+				<li class="btn button2 navbarlist"><a href="/blog/ru" class="nav_links">Блог</a></li>
+				<li class="btn button3 navbarlist"><a href="/about_me/ru" class="nav_links">Обо мне</a></li>
 			</ul>
 		
 	
-			<form action="/main_page" method="post" class="translator">
-				<!--selector, which allows to translate-->
-
-				<select id="dropdown" name="operation">
-					<!--"operation" is what helps to recognise this input field in the back end-->
-					<option value="russian">English</option>
-					<!--vallue gets passed to the back end and then the logic desides what language to translate into-->
-					<option value="english" selected>Русский</option>
-					<!--selected by default so that the user doesn't need to change the language-->
-				</select>
-
-				<input id="translate_button" type="submit" name="translate" value="RU">
-				<!--the button, which sends the data to the back end-->
-
-			</form>
-			<a href="/main_page/ru">RU</a>
+			<a href="/main_page" class="nav_links">ENG</a>
 		</nav>
 	</header>
 
@@ -62,7 +48,7 @@
 
 		<section class="section1">
 
-			<p class="statement">Get a competitively priced brochure website for your small business</p>
+			<p class="statement">Закажи веб-сайт типа брошюра по конкурентоспособной цене для своего малого бизнеса</p>
 
 		</section>
 
@@ -90,7 +76,7 @@
 					<img src="{{ url_for('static', filename='main_page/brochureicon.svg') }}">
 				</div>
 
-				<h2>What's a brochure website?</h2>
+				<h2>Что такое брошюрный вебсайт?</h2>
 
 				<p>A brochure website is essentially what its name suggests - a digital version of a printed brochure.
 					It's like a digital business card.
@@ -116,7 +102,7 @@
 					<img src="{{ url_for('static', filename='main_page/advantagesicon.svg') }}">
 				</div>
 
-				<h2>Why would you want one?</h2>
+				<h2>Почему вам стоит иметь вебсайт?</h2>
 
 				<ul>
 					<li> It shows the products or services your company provides to a wider audience.</li>
@@ -140,7 +126,7 @@
 					<img src="{{ url_for('static', filename='main_page/possibilitiesicon.svg') }}">
 				</div>
 
-				<h2>What's possible?</h2>
+				<h2>Что возможно?</h2>
 
 				<ul>
 					<li>The website can be responsive - be accessed on desktops, smartphones, and tablets through
@@ -165,15 +151,15 @@
 
 		</div>
 
-		<form class="contactform" action="/main_page" method="post">
+		<form class="contactform" action="/main_page/ru" method="post">
 			
-			<label class = "form_header">Contact me to get a quote today!</label>
+			<label class = "form_header">Свяжитесь со мной сегодня что бы узнать цену!</label>
 			{{ form.hidden_tag() }}
 			<!--need to add CRSF token to protect the website from forgery attacks-->
 
 			<div class="form_input_field">
 				{% if form.name.errors %}
-				{{ form.name(placeholder="Name") }}
+				{{ form.name(placeholder="Имя") }}
 				<!--actual input field from the form-->
 			</div>
 
@@ -185,13 +171,13 @@
 
 			<div class="form_input_field">
 				{% else %}
-				{{ form.name(placeholder="Name") }}
+				{{ form.name(placeholder="Имя") }}
 				{% endif %}
 			</div>
 
 			<div class="form_input_field">
 				{% if form.email.errors %}
-				{{ form.email(placeholder="Email") }}
+				{{ form.email(placeholder="Имейл") }}
 				<!--actual input field from the form-->
 			</div>
 
@@ -203,13 +189,13 @@
 
 			<div class="form_input_field">
 				{% else %}
-				{{ form.email(placeholder="Email")}}
+				{{ form.email(placeholder="Имейл")}}
 				{% endif %}
 			</div>
 
 			<div class="form_input_field">
 				{% if form.message.errors %}
-				{{ form.message(placeholder="Your needs")}}
+				{{ form.message(placeholder="Ваш запрос")}}
 				<!--actual input field from the form-->
 			</div>
 
@@ -221,14 +207,14 @@
 
 			<div class="form_input_field">
 				{% else %}
-				{{ form.message(placeholder="Your needs") }}
+				{{ form.message(placeholder="Ваш запрос") }}
 				{% endif %}
 			</div>
 
 			<div class="form_input_field">
 				{% if form.privacy_pol_checkbox.errors %}
 				{{ form.privacy_pol_checkbox() }}
-				<label class = "privacy_policy">I have read and agree to Browebgen<a href = "#">Privacy Policy</a></label>
+				<label class = "privacy_policy">Я прочитал и соглашаюсь с <a href = "#" class ="hyperlink">политикой конфиденциальности</a> browebgen.com</label>
 				<!--actual input field from the form-->
 			</div>
 
@@ -241,7 +227,7 @@
 			<div class="form_input_field">
 				{% else %}
 				{{ form.privacy_pol_checkbox() }}
-				<label class = "privacy_policy">I have read and agree to Browebgen <a href = "#" class ="hyperlink">Privacy Policy</a></label>
+				<label class = "privacy_policy">Я прочитал и соглашаюсь с <a href = "#" class ="hyperlink">политикой конфиденциальности</a> browebgen.com</label>
 				{% endif %}
 			</div>
 
@@ -292,6 +278,204 @@
 		</div>
 
 	</footer>
+</body>
+<!-----------------------------------------------------------Russian version------------------------------------------>
+<!-----------------------------------------------------------Russian version------------------------------------------>
+
+<body>
+	{% elif a == russian %}
+
+	<header>
+		<nav>
+			<div class="logo">
+				<img src="{{ url_for('static', filename='favicon.svg') }}" alt="deer">
+				<p class="brand_name">BROWEBGEN</p>
+			</div>
+			<ul class="navbar">
+				<li class="btn button1 navbarlist"><a href="/my_projects">Мои проекты</a></li>
+				<li class="btn button2 navbarlist"><a href="/blog">Блог</a></li>
+				<li class="btn button3 navbarlist"><a href="/about_me">Обо мне</a></li>
+			</ul>
+			</div>
+			<form action="/main_page" method="post" class="translator">
+
+				<select id="dropdown" name="operation">
+					<option value="russian" selected>English</option>
+					<option value="english">Русский</option>
+				</select>
+				<input id="translate_button" type="submit" name="translate" value="ENG">
+			</form>
+
+		</nav>
+	</header>
+
+	<main>
+
+		<section class="section1">
+			<p>Закажи веб-сайт типа брошюра по конкурентоспособной цене для вашего малого бизнеса.</p>
+		</section>
+
+		<form class="contactform" action="/main_page" method="post">
+
+			<div class="form_input_field">
+				<label>Свяжитесь со мной сегодня что бы узнать цену! </label>
+				{{ form.hidden_tag() }}
+				<!--need to add CRSF token to protect the website from forgery attacks-->
+			</div>
+
+			<div class="form_input_field">
+				{% if form.name.errors %}
+				{{ form.name(placeholder="Your name") }}
+				<!--actual input field from the form-->
+			</div>
+
+			<div>
+				{% for error in form.name.errors %}
+				<span class="form_error">{{ error }}</span>
+				{% endfor %}
+			</div>
+
+			<div class="form_input_field">
+				{% else %}
+				{{ form.name(placeholder="Your name") }}
+				{% endif %}
+			</div>
+
+			<div class="form_input_field">
+				{% if form.email.errors %}
+				{{ form.email(placeholder="Your email") }}
+				<!--actual input field from the form-->
+			</div>
+
+			<div>
+				{% for error in form.email.errors %}
+				<span class="form_error"> {{ error }} </span>
+				{% endfor %}
+			</div>
+
+			<div class="form_input_field">
+				{% else %}
+				{{ form.email(placeholder="Your email")}}
+				{% endif %}
+			</div>
+
+			<div class="form_input_field">
+				{% if form.message.errors %}
+				{{ form.message(placeholder="Your message")}}
+				<!--actual input field from the form-->
+			</div>
+
+			<div>
+				{% for error in form.message.errors %}
+				<span class="form_error"> {{ error }} </span>
+				{% endfor %}
+			</div>
+
+			<div class="form_input_field">
+				{% else %}
+				{{ form.message(placeholder="Your message") }}
+				{% endif %}
+			</div>
+
+			<div class="form_input_field">
+				{{ form.submit()}}
+				<!--actual input field from the form-->
+			</div>
+
+			<div class="recaptcha_field">
+				{{ form.recaptcha }}
+			</div>
+
+			<div>
+				{% for error in form.recaptcha.errors %}
+				<span class="form_error"> {{ error }} </span>
+				{% endfor %}
+			</div>
+
+		</form>
+
+
+		<div class="main_section_container">
+			<section class="section2">
+				<div>
+					<img src="{{ url_for('static', filename='main_page/brochureicon.svg') }}" class="icon">
+				</div>
+				<h2>Что такое брошюрный вебсайт?</h2>
+				<p> Брошюрный вебсайт - это, по сути, то, о чем его название подсказывавет
+					- цифровая версия печатной брошюры. Это как цифровая визитка.
+					Однако он рекламирует продукты или услуги, которые предоставляет ваша компания,
+					в отличие от Е-коммерс веб-сайта, он не продает товары или услуги в Интернете.
+					На этом виде вебсайта только отображаются товары и услуги, поэтому потенциальным клиентам
+					придется связаться с компанией, чтобы оформить заказ или организовать услугу.
+
+					Например, небольшая сантехническая компания может создать брошюрный веб-сайт с домашней
+					страницей для отображения контактной информации,страницей «о нас» с описанием компании и
+					несколькими фотографиями их работ.
+
+					Если у вас нет времени на создание веб-сайта самостоятельно, вы можете связаться со мной и заказать
+					брошюрный вебсайт для вашего малого бизнеса сегодня.</p>
+			</section>
+
+			<section class="section3">
+				<div>
+					<img src="{{ url_for('static', filename='main_page/possibilitiesicon.svg') }}" class="icon">
+				</div>
+				<h2>Что возможно?</h2>
+
+				<ul>
+					<li>Эти веб-сайты могут быть доступным на настольных компьютерах, смартфонах и планшетах
+						через любой браузер, поэтому вы можете быть
+						уверены, что вашу компанию достигает максимальное количество людей.</li>
+
+				</ul>
+
+			</section>
+
+			<section class="section4">
+				<div>
+					<img src="{{ url_for('static', filename='main_page/advantagesicon.svg') }}" class="icon">
+				</div>
+				<h2>Почему вам стоит иметь брошюрный вебсайт?</h2>
+				<ul>
+					<li> Они показывают продукты или услуги, которые предоставляет ваша компания. </li>
+					<li> Хороший веб-сайт отлично подходит для продвижения вашего бизнеса. </li>
+					<li> Используя эффективные слова и привлекательные изображения, они могут привлечь внимание людей и
+						реально помочь продовать ваши товары или услуги. </li>
+				</ul>
+			</section>
+		</div>
+
+	</main>
+
+
+
+	<footer>
+		<div class="footercontainer">
+			<ul class="footer">
+				<li class="footerlist"><a
+						href="mailto:dmimart@hotmail.com?subject= I'd like to ask for my website&body=Hi Dima,"
+						target="_blank" rel="noopener noreferrer"><img
+							src="{{ url_for('static', filename='email.svg') }}" class="footericon"></a><a
+						href="mailto:dmimart@hotmail.com?subject=Would like to ask for my website&body=Hi Dima,"
+						target="_blank" rel="noopener noreferrer" class="contact">Связаться через e-mail</a></li>
+				<li class="footerlist"><a href="https://api.whatsapp.com/send?phone=077487731324" target="_blank"
+						rel="noopener noreferrer" class="socmed"><img
+							src="{{ url_for('static', filename='whatsapp.svg') }}" class="footericon"></a><a
+						href="https://api.whatsapp.com/send?phone=+447487731324" target="_blank"
+						rel="noopener noreferrer" class="contact">Связаться через WhatsApp</a></li>
+			</ul>
+			<p class="attribution">Иконки на этом вебсайте сделаны<a class="hyperlinks"
+					href="https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer"> Freepik
+				</a>, <a class="hyperlinks" href="https://www.flaticon.com/authors/kiranshastry" target="_blank"
+					rel="noopener noreferrer"> Kiranshastry </a>,<a class="hyperlinks"
+					href="https://www.flaticon.com/authors/pixel-perfect" target="_blank" rel="noopener noreferrer">
+					Pixel perfect </a>и <a class="hyperlinks" href="https://www.flaticon.com/authors/becris"
+					target="_blank" rel="noopener noreferrer"> Becris </a> от <a class="hyperlinks"
+					href="https://www.flaticon.com/" target="_blank" rel="noopener noreferrer"> www.flaticon.com</a></p>
+			<p class="copyright">Авторские права © 2020. BROWEBGEN.COM. Все права защищены.</p>
+		</div>
+	</footer>
+	{% endif %}
 </body>
 
 </html>
