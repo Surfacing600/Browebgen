@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en">
+<html lang="ru">
 <head>
 
   	<meta charset="utf-8">
@@ -9,6 +9,8 @@
 	<meta name="author" content="Dmitry Martinov">
 	<meta name="description" content="Read the stody of a self-taught beginner in web development who is offering you to buid a brochure website for your small business.">
 	<meta name="viewport" content="width=device-width, initial-scale=1"><!--important for responsivness, for media queries to work-->
+	<link rel="alternate" hreflang="en-GB" href="url_of_page" />
+	<link rel="alternate" hreflang="ru-GB" href="url_of_page" />
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Gayathri:wght@700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
@@ -35,7 +37,7 @@
 				<li class = "btn button3 navbarlist"><a href = "/blog/ru" class="nav_links">Блог</a></li>
 			</ul>
 
-			<a href="/about_me" class="nav_links">ENG</a>
+			<a href="/about_me" class="translator">ENG</a>
 
 		</nav>
 	</header>
@@ -43,38 +45,42 @@
 	<main>
 			<div class="picturecontainer">
 				<p class="mystory1">
-					my
+					моя
 				</p>
 				<p class="mystory2">
-					STORY
+					ИСТОРИЯ
 				</p>
 				<p class="myname">
-					DMITRY MARTINOV
+					ДМИТРИЙ МАРТЫНОВ
 				</p>
 				<img src= "{{ url_for('static', filename='about_me/me.jpg') }}" class= "mypicture" alt="Photo of the website author">
 			</div>
-		<section class= "story">
-			<p class= "para paragraph1">
-				Hi, nice to meet you! I've decided to build this website to practice my basic knowledge in web development which I self-learned over 6 months period. 
-				I'm originally from Latvia but currently based in London. I've been living in London for over 10 years. During this time I got my BSc and MSc in Social Sciences before I landed my first professional job at an academic publisher. 
-				My flirting with programming languages begun in 2016 when I decided to take an introductory course in Python. I soon realised that while you can do amasing stuff with Python it's of little use to anyone without a user interface. 
-				During my current employment, I got exposed to some HTML and website building using <a href="https://www.squarespace.com/" rel="nofollow" target="_blank" rel="noopener noreferrer">Squarespace</a>. I quickly understood how and what websites are built for and got interested in learning about how to create them myself. 
-				I treat my preoccupation with web development as my hobby at the moment, which perfectly fits with these typical rainy English days. 
-			</p>
-			<p class= "para paragraph2">
-				The website you're seeing is my first website built from scratch. 
-				I made decisions on everything you see here - colours, icons, logo, animations, structure, pages, font, layout and content. 
-				Regardless of which device you've accessed this website from it should look equally good as I've built it to be responsive. 
-				I thought that instead of me trying to figure out how to practise front end coding myself I can build websites for people who have
-				small business and would like to harness the power of the Internet and get a wider outreach.
-			</p>
-			<p class= "para paragraph3">
-				In case you're wondering why deer and why "BROWEBGEN", I'd like to demystify those two aspects of my logo. 
-				I like deers' habitat - mountains, deciduous forests, grasslands and rain forests. 
-				I also like how this animal looks because of their antlers, by the way, only males have them. 
-				Deer is athletic, which aligns with my predisposition towards doing sports and leading active lifestyle. 
-				The name of my brand reflects what services I provide - BROchure WEBsite GENerator (creator). I hope you'll <a href="mailto:dmimart@hotmail.com?subject=I'd like to ask for my website&body=Hi Dima," target="_blank" rel="noopener noreferrer" class = "hyperlinks">get in touch</a> and we'll take it from there! 
-			</p>
+			<section class= "story">
+				<p class= "para paragraph1">
+					Привет! Я решил создать этот веб-сайт, чтобы практиковать свои базовые знания в области веб-разработки, которые я выучил самостоятельно в течение 6-ти месяцев.
+					Я родом из Латвии, но в настоящее время живу в Лондоне более 10-ти лет. За это время я получил степень бакалавра и магистра социальных наук, прежде чем устроился
+					на свою первую профессиональную работу в академическом издательстве. Мое увлечение языками программирования началось в 2016 году, когда я решил пройти вводный курс
+					по Python. Вскоре я понял, что, хотя с Python можно делать удивительные вещи, он бесполезен без пользовательского интерфейса.
+					Во время моей нынешней работе я познакомился с HTML и созданием веб-сайтов с использованием веб движка - <a href="https://www.squarespace.com/" rel="nofollow" target="_blank" rel="noopener noreferrer"> Squarespace </a>.
+					В скоре я понял, как и для чего создаются веб-сайты, и заинтересовался тем, как их создавать самому.
+					В настоящий момент я отношусь к своей увлеченности веб-разработкой как к своему хобби, которое идеально подходит для этих типичных дождливых английских дней.
+				</p>
+				<p class= "para paragraph2">
+					Веб-сайт, который вы видите, - это мой первый веб-сайт, созданный с нуля.
+					Я принимал решения об о всем, что вы здесь видите - цвета, значки, логотип, анимации, структура, страницы, шрифт, макет и контент.
+					Независимо от того, с какого устройства вы зашли на этот веб-сайт, он должен выглядеть одинаково хорошо, так как
+					я создал его, чтобы он бы отзывчивым на любое разрешение экрана. Я подумал, что вместо того, чтобы пытаться
+					найти способ, как самому практиковать фронтенд и бакенд кодирование, я могу работать над реальными проектами
+					создавая веб-сайты для людей, которые ведут малый бизнес и хотят использовать возможности Интернета тем самым расширяя охват.
+				</p>
+				<p class= "para paragraph3">
+					Если вам интересно, почему олень и почему «BROWEBGEN», я хотел бы развенчать эти два аспекта моего логотипа.
+					Мне нравится среда обитания оленей - горы, лиственные леса, луга и тропические леса.
+					Еще мне нравится, как это животное выглядит из-за своих рогов, кстати, только у самцов есть рога.
+					Олень спортивный, что согласуется с моей склонностью к занятиям спортом и ведению активного образа жизни.
+					Название моего бренда отражает то, какие услуги я предоставляю - Создатель брошюрных вебсайтов
+					(BROsure WEBsite GENerator). Надеюсь, вы <a href = "mailto: dmimart@hotmail.com? Subject = Я хотел бы попросить мой веб-сайт & body = Привет, Дима," target = "_ blank" rel = "noopener noreferrer" class = "hyperlinks" > свяжитесь со мной </a>, и от туда мы и начнем!
+				</p>
 		</section>
 			
 	</main>

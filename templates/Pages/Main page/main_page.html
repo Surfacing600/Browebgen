@@ -7,6 +7,8 @@
 	<meta charset="utf-8">
 	<title>Get a brochure website for free</title>
 	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg">
+	<link rel="alternate" hreflang="en-GB" href="url_of_page" />
+	<link rel="alternate" hreflang="ru-GB" href="url_of_page" />
 	<meta name="author" content="Dmitry Martinov">
 	<meta name="description"
 		content="Get a brochure website for your small business for a competitive price. Pay for hosting and domain only.">
@@ -37,24 +39,9 @@
 				<li class="btn button2 navbarlist"><a href="/blog" class="nav_links">Blog</a></li>
 				<li class="btn button3 navbarlist"><a href="/about_me" class="nav_links">About me</a></li>
 			</ul>
-		
-	
-			<form action="/main_page" method="post" class="translator">
-				<!--selector, which allows to translate-->
 
-				<select id="dropdown" name="operation">
-					<!--"operation" is what helps to recognise this input field in the back end-->
-					<option value="russian">English</option>
-					<!--vallue gets passed to the back end and then the logic desides what language to translate into-->
-					<option value="english" selected>Русский</option>
-					<!--selected by default so that the user doesn't need to change the language-->
-				</select>
-
-				<input id="translate_button" type="submit" name="translate" value="RU">
-				<!--the button, which sends the data to the back end-->
-
-			</form>
-			<a href="/main_page/ru">RU</a>
+			<a href="/main_page/ru" class="translator">RU</a>
+			
 		</nav>
 	</header>
 

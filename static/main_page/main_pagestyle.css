@@ -185,11 +185,6 @@ a:active{
 
 /* c. Translator*/
 
-.language_select{
-    color: #f2e8d3;
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
 .translator{
     margin-left: 5%;
     margin-right: 0px;
@@ -198,18 +193,25 @@ a:active{
     top: 30px;
     position: absolute;
     right: 50px;
+    border: solid 1px black;
+    padding: 5px;
+    color: black;
+}
+
+.translator:hover{
+    background: #5E4B26;
+    color: #D6B066;
+}
+
+.translator:active{
+    background: #5e2626;
+    color: #D6B066;
 }
 
 #dropdown{
     display: none;
   }
 
-#translate_button{
-    font-size: 12px;
-    padding: 5px;
-    width: 50px;
-    margin-left: -20px;
-}
 
 /*-----------------
  2. Body

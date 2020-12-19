@@ -8,24 +8,17 @@ from email_validator import validate_email
 import re#allows to read regular expression for email validation in the russian version of the form
 
 class contact_form(FlaskForm):
-
     recaptcha = RecaptchaField(validators=[Recaptcha(message="Please verify that you're not a robot")])#Displays the message specified instead of a defoult one
-
     name = StringField("Name", validators=[DataRequired(),#"Name" is used as a label and bassed to html using jinja
                                  Length(min=3, max=10)])#sets length for the data input
-    email = StringField("Email",
-                        validators=[DataRequired(), Email()])#Email() validator check if data imputed follows email standard
+    email = StringField("Email", validators=[DataRequired(), Email()])#Email() validator check if data imputed follows email standard
     message = TextAreaField("Message", validators=[DataRequired(), Length(min=20, max=200)])
-
     privacy_pol_checkbox = BooleanField("I Agree to Privacy Policy", validators=[DataRequired()])
-    
     submit = SubmitField("Send the message")
         
 
 class contact_form_ru(FlaskForm):#using different form for the russian version of the page to be able to translate the rror messages
-
     recaptcha = RecaptchaField(validators=[Recaptcha(message="Подтвердите что вы не робот.")])#Displays the message specified instead of a defoult one
-
     name = StringField("Name")
     email = StringField("Email")
     message = TextAreaField("Message")
@@ -61,25 +54,15 @@ class contact_form_ru(FlaskForm):#using different form for the russian version o
 
 
 class testimonial(FlaskForm):
-
-    name = StringField("Name", validators=[DataRequired(),
-                                 Length(min=3, max=10)])
-
-    testimonial = StringField("Testimonial", validators=[DataRequired(), 
-                                Length(min=6, max=150)])
-
+    name = StringField("Name", validators=[DataRequired(), Length(min=3, max=10)])
+    testimonial = StringField("Testimonial", validators=[DataRequired(), Length(min=6, max=150)])
     submit = SubmitField("Post testimonial")
-
     recaptcha = RecaptchaField(validators=[Recaptcha(message="Please verify that you're not a robot")])
 
 class testimonial_ru(FlaskForm):
-
     name = StringField("Name")
-
     testimonial = StringField("Testimonial")
-
     submit = SubmitField("Отправить")
-
     recaptcha = RecaptchaField(validators=[Recaptcha(message="Подтвердите что вы не робот.")])
 
     def validate_name(self, name):#using custom validator to have the error message in russian when field is empty 
