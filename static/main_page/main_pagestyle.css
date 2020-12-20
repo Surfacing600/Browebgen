@@ -391,6 +391,7 @@ textarea {
     font-size: 25px;
     text-transform: uppercase;
     margin-left: 50px;
+    text-align: center;
     margin-right: auto;
 }
 
@@ -515,6 +516,12 @@ footer{
 
 @media screen and (max-width: 1194px) {
 
+
+    .form_header{
+        margin-left: 8px;
+        margin-right: auto;
+    }
+
       .btn::before{/*switches of the desctop version animation*/
         display: none;
     }
@@ -595,6 +602,7 @@ footer{
         padding: 0;
         font-size: 20px;
     }
+
 }
 
 @media screen and (max-width: 565px) {
@@ -625,6 +633,11 @@ footer{
 /*For iPhone 6/7/8*/
 
 @media screen and (max-width: 414px) {
+
+
+    .translator{
+        font-size: 10px;
+    }
 
     .logo{
         position: relative;/*a relatively positioned element is offset relative to its original position in the page flow it allows to move the logo within the container*/
@@ -676,21 +689,11 @@ footer{
 		width: 25px;
 	}
 
-	.attribution{
-		font-size: 7px;
-    }
-
 }
 
 /*For iPhone 6/7/8 IOS 11*/
 
 @media screen and (max-width: 375px){
-
-
-    .form_header{
-        font-size: 18px;
-        margin-left: 35px;
-    }
 
     input[type="text"],
     input[type="email"],
@@ -723,12 +726,6 @@ footer{
     .translator{
         right: 10px;
     }
-    
-
-    .form_header{
-        font-size: 18px;
-        margin-left: 35px;
-    }
 
     input[type="text"],
     input[type="email"],
@@ -753,12 +750,6 @@ footer{
 }
 
 @media screen and (max-width: 320px){
-
-
-    .form_header{
-        font-size: 15px;
-        margin-left: 35px;
-    }
 
     input[type="text"],
     input[type="email"],

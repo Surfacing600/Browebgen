@@ -80,7 +80,7 @@
 				<h2>What's a brochure website?</h2>
 
 				<p>A brochure website is essentially what its name suggests - a digital version of a printed brochure.
-					It's like a digital business card.
+					It's like a digital business card but with more functionality and potential.
 					It shows the products or services your company provides, however,
 					unlike an e-commerce website, it does not sell the product or service online.
 					On a brochure website, the goods and services are only displayed, so prospective clients
@@ -89,7 +89,7 @@
 				<p>For example, a small plumbing company would build a brochure website with a homepage to
 					display contact information, an ‘about us’ page describing the company, and maybe a few
 					photos of their work. There is a lot of good website builders out there that provide an
-					outside the box solution, <a href="#" target="_blank">read my blog</a> on why you would and wouldn't want using these to build your
+					off the box solution, <a href="#" target="_blank">read my blog</a> on why you would and wouldn't want using these to build your
 					website.
 					If you don’t have time to create a website yourself or want to get a more tailored solution than the
 					website builders provide, then why not contacting me today
@@ -103,7 +103,7 @@
 					<img src="{{ url_for('static', filename='main_page/advantagesicon.svg') }}">
 				</div>
 
-				<h2>Why would you want one?</h2>
+				<h2>Why would you want a borchure website?</h2>
 
 				<ul>
 					<li> It shows the products or services your company provides to a wider audience.</li>
@@ -154,7 +154,7 @@
 
 		<form class="contactform" action="/main_page" method="post">
 			
-			<label class = "form_header">Contact me to get a quote today!</label>
+			<p class = "form_header">Contact me to get a quote today!</p>
 			{{ form.hidden_tag() }}
 			<!--need to add CRSF token to protect the website from forgery attacks-->
 
@@ -261,10 +261,10 @@
 							src="{{ url_for('static', filename='email.svg') }}" class="footericon"></a><a
 						href="mailto:dmimart@hotmail.com?subject=Would like to ask for my website&body=Hi Dima,"
 						target="_blank" rel="noopener noreferrer" class="contact hyperlink">Contact via email</a></li>
-				<li class="footerlist"><a href="https://api.whatsapp.com/send?phone=077487731324" target="_blank"
+				<li class="footerlist"><a href="https://api.whatsapp.com/send?phone=+447487731324" target="_blank"
 						rel="noopener noreferrer"><img
 							src="{{ url_for('static', filename='whatsapp.svg') }}" class="footericon"></a><a
-						href="https://api.whatsapp.com/send?phone=077487731324" target="_blank"
+						href="https://api.whatsapp.com/send?phone=+447487731324" target="_blank"
 						rel="noopener noreferrer" class="contact hyperlink">Contact via WhatsApp</a></li>
 			</ul>
 			<p class="attribution">Icons on this page made by<a class="hyperlinks"

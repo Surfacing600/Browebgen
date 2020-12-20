@@ -24,14 +24,14 @@
 </head>
 
 <body>
-	{% if b == english %}
+
 	<!--checks if "b" variable specified in the back end is equal to value="english" in one option selector below-->
 	<header>
 		<nav>
 			<div class= "logo_container"><!--this container is needed to position logo at the center of container and control the logo container width to avoid wide clickable area of the brand name's hyperlink-->
 				<div class= "logo">
-					<a href = "/main_page"><img src="{{ url_for('static', filename='favicon.svg') }}" alt="deer"></a>
-					<a href = "/main_page"><p class="brand_name">BROWEBGEN</p></a>
+					<a href = "/main_page/ru"><img src="{{ url_for('static', filename='favicon.svg') }}" alt="deer"></a>
+					<a href = "/main_page/ru"><p class="brand_name">BROWEBGEN</p></a>
 				</div>
 			</div>
 			
@@ -50,7 +50,7 @@
 
 		<section class="section1">
 
-			<p class="statement">Закажи веб-сайт типа брошюра по конкурентоспособной цене для своего малого бизнеса</p>
+			<p class="statement">Закажи сайт-брошюра по конкурентоспособной цене для своего малого бизнеса</p>
 
 		</section>
 
@@ -78,23 +78,25 @@
 					<img src="{{ url_for('static', filename='main_page/brochureicon.svg') }}">
 				</div>
 
-				<h2>Что такое брошюрный вебсайт?</h2>
+				<h2>Что такое сайт-брошюра?</h2>
 
-				<p>A brochure website is essentially what its name suggests - a digital version of a printed brochure.
-					It's like a digital business card.
-					It shows the products or services your company provides, however,
-					unlike an e-commerce website, it does not sell the product or service online.
-					On a brochure website, the goods and services are only displayed, so prospective clients
-					will have to contact the company to place an order or arrange a service. </p>
+				<p>Сайт-брошюра - это, по сути, то, что предполагает его название - цифровая
+				 версия печатной брошюры. Это как цифровая визитка но с большей функциональностью
+				 и потенциалом. Он показывает продукты или услуги, которые предоставляет ваша
+				 компания, однако, в отличие от веб-магазина, он не продает продукт или услугу
+				 в Интернете. На сайте-брошюре товары и услуги только рекламируются, поэтому
+				 потенциальным клиентам придется обращаться в вашу компанию, чтобы разместить
+				 заказ или заказать услугу.</p>
 
-				<p>For example, a small plumbing company would build a brochure website with a homepage to
-					display contact information, an ‘about us’ page describing the company, and maybe a few
-					photos of their work. There is a lot of good website builders out there that provide an
-					outside the box solution, <a href="#" target="_blank">read my blog</a> on why you would and wouldn't want using these to build your
-					website.
-					If you don’t have time to create a website yourself or want to get a more tailored solution than the
-					website builders provide, then why not contacting me today
-					outlining your needs to get a quote?</p>
+				<p>Например, небольшая сантехническая компания создаст сайт-брошюра с домашней
+				страницей для отображения контактной информации, страницей «о нас» с описанием
+				компании и, возможно, несколькими фотографиями их работы. Есть много хороших
+				конструкторов веб-сайтов, которые предоставляют нестандартные решения,
+				прочтите <a href="#" target="_blank">мой блог</a> о том, почему вам стоит и не стоит
+				использовать их для создания своего веб-сайта. Если у вас нет времени на
+				создание веб-сайта самостоятельно или вы хотите получить более индивидуальное решение,
+				чем то что предлагают конструкторы веб-сайтов, то почему бы не связаться со
+				мной сегодня и не рассказать о ваших потребностях, чтобы узнать цену?</p>
 
 			</section>
 
@@ -104,20 +106,17 @@
 					<img src="{{ url_for('static', filename='main_page/advantagesicon.svg') }}">
 				</div>
 
-				<h2>Почему вам стоит иметь вебсайт?</h2>
+				<h2>Почему вам стоит иметь сайт-брошюра?</h2>
 
 				<ul>
-					<li> It shows the products or services your company provides to a wider audience.</li>
-					<li> It's great for promoting your business.</li>
-					<li> Have more constructive conversations with your customers via web forms.</li>
-					<li> Increase your competitiveness.</li>
-					<li> Your prospective clients/customers may expect you to have your website so that they can find
-						more information about your business.</li>
-					<li> Influence your brand perception by writing your own story on the website.</li>
-					<li> Show to others that you're serious about your small business. It adds credibility to your
-						company.</li>
-					<li> By using effective words and captivating images, it can draw people in and help to sell your
-						products.</li>
+					<li>Он показывает продукты или услуги, которые ваша компания предоставляет более широкой аудитории.</li>
+					<li>Это отлично подходит для продвижения вашего бизнеса.</li>
+					<li>Общайтесь с клиентами более конструктивно - с помощью веб-форм.</li>
+					<li>Повысте свою конкурентоспособность.</li>
+					<li>Ваши потенциальные клиенты могут ожидать, что у вас есть свой веб-сайт, где они могут найти дополнительную информацию о вашем бизнесе.</li>
+					<li>Повлияйте на восприятие вашего бренда, написав собственную историю на веб-сайте.</li>
+					<li>Покажите другим, что вы серьезно относитесь к своему малому бизнесу. Это повышает авторитет вашей компании.</li>
+					<li>Используя эффективные слова и захватывающие изображения, он может привлечь людей и помочь продать ваши продукты.</li>
 				</ul>
 
 			</section>
@@ -131,22 +130,14 @@
 				<h2>Что возможно?</h2>
 
 				<ul>
-					<li>The website can be responsive - be accessed on desktops, smartphones, and tablets through
-						any browser, so you can be sure your company is reaching the maximum number of people.</li>
-					<li>The website can be bi-lingual. You won't need to provide me with the content in another
-						language unless this language is other than English or Russian.</li>
-					<li>Almost everything is customisable - layout, colours, navigation bars, element shapes, buttons,
-						forms,
-						input fields, font style, types of pages, their numbers and structure. Make it your own.</li>
-					<li>Forms with any input types. Decide on what information you want to know about your customers.
-					</li>
-					<li>A booking system. Let the automation do the work.</li>
-					<li>An email notification along with the form data from a new form submitted for you and a follow-up
-						email for your prospective client. Make it easy for yourself while providing excellent customer
-						service.</li>
-					<li>Dynamic testimonial board. Show what other people think about your product or service.</li>
-					<li>Simple animations. Have an eye-catching website, which is a bit more than a collection of
-						monolithic pages.</li>
+					<li>Веб-сайт может быть отзывчивым - он выглядит одинаково хорошо как на настольных компьютерах, так и на смартфонах и планшетах, поэтому вы можете быть уверены, что ваша компания привлекает максимальное количество людей.</li>
+					<li>Он может быть двуязычным. Вам не нужно будет предоставлять мне контент на другом языке, если этот контент на английском или русском языках.</li>
+					<li>Настраивается практически все - макет, цвета, панели навигации, формы элементов, кнопки, поля ввода, стиль шрифта, типы страниц, их номера и структура. Сделайте сайт своим.</li>
+					<li>Формы с любыми типами ввода. Решите, какую информацию вы хотите узнать от своих клиентов.</li>
+					<li>Система бронирования. Пусть автоматика сделает свою работу.</li>
+					<li>Уведомление по электронной почте вместе с данными формы полученные из формы, отправленной посетителем вашего сайта, и последующее автоматизированное электронное письмо для этого посетителя. Сделайте это проще для себя и обеспечьте отличное обслуживание клиентов.</li>
+					<li>Динамическая доска отзывов. Покажите, что другие люди думают о вашем продукте или сервисе.</li>
+					<li>Простые анимации. Создайте привлекательный веб-сайт, который представляет собой нечто большее, чем набор монолитных страниц.</li>
 				</ul>
 
 			</section>
@@ -155,7 +146,7 @@
 
 		<form class="contactform" action="/main_page/ru" method="post">
 			
-			<label class = "form_header">Свяжитесь со мной сегодня что бы узнать цену!</label>
+			<p class = "form_header">Свяжитесь со мной сегодня что бы узнать цену!</p>
 			{{ form.hidden_tag() }}
 			<!--need to add CRSF token to protect the website from forgery attacks-->
 
@@ -257,227 +248,29 @@
 		<div class="footercontainer">
 			<ul class="footer">
 				<li class="footerlist"><a
-						href="mailto:dmimart@hotmail.com?subject= I'd like to ask for my website&body=Hi Dima,"
-						target="_blank" rel="noopener noreferrer"><img
-							src="{{ url_for('static', filename='email.svg') }}" class="footericon"></a><a
-						href="mailto:dmimart@hotmail.com?subject=Would like to ask for my website&body=Hi Dima,"
-						target="_blank" rel="noopener noreferrer" class="contact hyperlink">Contact via email</a></li>
-				<li class="footerlist"><a href="https://api.whatsapp.com/send?phone=077487731324" target="_blank"
-						rel="noopener noreferrer"><img
-							src="{{ url_for('static', filename='whatsapp.svg') }}" class="footericon"></a><a
-						href="https://api.whatsapp.com/send?phone=077487731324" target="_blank"
-						rel="noopener noreferrer" class="contact hyperlink">Contact via WhatsApp</a></li>
-			</ul>
-			<p class="attribution">Icons on this page made by<a class="hyperlinks"
-					href="https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer"> Freepik
-				</a>, <a class="hyperlinks" href="https://www.flaticon.com/authors/kiranshastry" target="_blank"
-					rel="noopener noreferrer"> Kiranshastry </a>,<a class="hyperlinks"
-					href="https://www.flaticon.com/authors/pixel-perfect" target="_blank" rel="noopener noreferrer">
-					Pixel perfect </a>and <a class="hyperlinks" href="https://www.flaticon.com/authors/becris"
-					target="_blank" rel="noopener noreferrer"> Becris </a> from <a class="hyperlinks"
-					href="https://www.flaticon.com/" target="_blank" rel="noopener noreferrer"> www.flaticon.com</a></p>
-			<p class="copyright">Copyright © 2020. BROWEBGEN.COM. All rights reserved.</p>
-		</div>
-
-	</footer>
-</body>
-<!-----------------------------------------------------------Russian version------------------------------------------>
-<!-----------------------------------------------------------Russian version------------------------------------------>
-
-<body>
-	{% elif a == russian %}
-
-	<header>
-		<nav>
-			<div class="logo">
-				<img src="{{ url_for('static', filename='favicon.svg') }}" alt="deer">
-				<p class="brand_name">BROWEBGEN</p>
-			</div>
-			<ul class="navbar">
-				<li class="btn button1 navbarlist"><a href="/my_projects">Мои проекты</a></li>
-				<li class="btn button2 navbarlist"><a href="/blog">Блог</a></li>
-				<li class="btn button3 navbarlist"><a href="/about_me">Обо мне</a></li>
-			</ul>
-			</div>
-			<form action="/main_page" method="post" class="translator">
-
-				<select id="dropdown" name="operation">
-					<option value="russian" selected>English</option>
-					<option value="english">Русский</option>
-				</select>
-				<input id="translate_button" type="submit" name="translate" value="ENG">
-			</form>
-
-		</nav>
-	</header>
-
-	<main>
-
-		<section class="section1">
-			<p>Закажи веб-сайт типа брошюра по конкурентоспособной цене для вашего малого бизнеса.</p>
-		</section>
-
-		<form class="contactform" action="/main_page" method="post">
-
-			<div class="form_input_field">
-				<label>Свяжитесь со мной сегодня что бы узнать цену! </label>
-				{{ form.hidden_tag() }}
-				<!--need to add CRSF token to protect the website from forgery attacks-->
-			</div>
-
-			<div class="form_input_field">
-				{% if form.name.errors %}
-				{{ form.name(placeholder="Your name") }}
-				<!--actual input field from the form-->
-			</div>
-
-			<div>
-				{% for error in form.name.errors %}
-				<span class="form_error">{{ error }}</span>
-				{% endfor %}
-			</div>
-
-			<div class="form_input_field">
-				{% else %}
-				{{ form.name(placeholder="Your name") }}
-				{% endif %}
-			</div>
-
-			<div class="form_input_field">
-				{% if form.email.errors %}
-				{{ form.email(placeholder="Your email") }}
-				<!--actual input field from the form-->
-			</div>
-
-			<div>
-				{% for error in form.email.errors %}
-				<span class="form_error"> {{ error }} </span>
-				{% endfor %}
-			</div>
-
-			<div class="form_input_field">
-				{% else %}
-				{{ form.email(placeholder="Your email")}}
-				{% endif %}
-			</div>
-
-			<div class="form_input_field">
-				{% if form.message.errors %}
-				{{ form.message(placeholder="Your message")}}
-				<!--actual input field from the form-->
-			</div>
-
-			<div>
-				{% for error in form.message.errors %}
-				<span class="form_error"> {{ error }} </span>
-				{% endfor %}
-			</div>
-
-			<div class="form_input_field">
-				{% else %}
-				{{ form.message(placeholder="Your message") }}
-				{% endif %}
-			</div>
-
-			<div class="form_input_field">
-				{{ form.submit()}}
-				<!--actual input field from the form-->
-			</div>
-
-			<div class="recaptcha_field">
-				{{ form.recaptcha }}
-			</div>
-
-			<div>
-				{% for error in form.recaptcha.errors %}
-				<span class="form_error"> {{ error }} </span>
-				{% endfor %}
-			</div>
-
-		</form>
-
-
-		<div class="main_section_container">
-			<section class="section2">
-				<div>
-					<img src="{{ url_for('static', filename='main_page/brochureicon.svg') }}" class="icon">
-				</div>
-				<h2>Что такое брошюрный вебсайт?</h2>
-				<p> Брошюрный вебсайт - это, по сути, то, о чем его название подсказывавет
-					- цифровая версия печатной брошюры. Это как цифровая визитка.
-					Однако он рекламирует продукты или услуги, которые предоставляет ваша компания,
-					в отличие от Е-коммерс веб-сайта, он не продает товары или услуги в Интернете.
-					На этом виде вебсайта только отображаются товары и услуги, поэтому потенциальным клиентам
-					придется связаться с компанией, чтобы оформить заказ или организовать услугу.
-
-					Например, небольшая сантехническая компания может создать брошюрный веб-сайт с домашней
-					страницей для отображения контактной информации,страницей «о нас» с описанием компании и
-					несколькими фотографиями их работ.
-
-					Если у вас нет времени на создание веб-сайта самостоятельно, вы можете связаться со мной и заказать
-					брошюрный вебсайт для вашего малого бизнеса сегодня.</p>
-			</section>
-
-			<section class="section3">
-				<div>
-					<img src="{{ url_for('static', filename='main_page/possibilitiesicon.svg') }}" class="icon">
-				</div>
-				<h2>Что возможно?</h2>
-
-				<ul>
-					<li>Эти веб-сайты могут быть доступным на настольных компьютерах, смартфонах и планшетах
-						через любой браузер, поэтому вы можете быть
-						уверены, что вашу компанию достигает максимальное количество людей.</li>
-
-				</ul>
-
-			</section>
-
-			<section class="section4">
-				<div>
-					<img src="{{ url_for('static', filename='main_page/advantagesicon.svg') }}" class="icon">
-				</div>
-				<h2>Почему вам стоит иметь брошюрный вебсайт?</h2>
-				<ul>
-					<li> Они показывают продукты или услуги, которые предоставляет ваша компания. </li>
-					<li> Хороший веб-сайт отлично подходит для продвижения вашего бизнеса. </li>
-					<li> Используя эффективные слова и привлекательные изображения, они могут привлечь внимание людей и
-						реально помочь продовать ваши товары или услуги. </li>
-				</ul>
-			</section>
-		</div>
-
-	</main>
-
-
-
-	<footer>
-		<div class="footercontainer">
-			<ul class="footer">
-				<li class="footerlist"><a
-						href="mailto:dmimart@hotmail.com?subject= I'd like to ask for my website&body=Hi Dima,"
-						target="_blank" rel="noopener noreferrer"><img
-							src="{{ url_for('static', filename='email.svg') }}" class="footericon"></a><a
-						href="mailto:dmimart@hotmail.com?subject=Would like to ask for my website&body=Hi Dima,"
-						target="_blank" rel="noopener noreferrer" class="contact">Связаться через e-mail</a></li>
-				<li class="footerlist"><a href="https://api.whatsapp.com/send?phone=077487731324" target="_blank"
-						rel="noopener noreferrer" class="socmed"><img
-							src="{{ url_for('static', filename='whatsapp.svg') }}" class="footericon"></a><a
-						href="https://api.whatsapp.com/send?phone=+447487731324" target="_blank"
-						rel="noopener noreferrer" class="contact">Связаться через WhatsApp</a></li>
+					href="mailto:dmimart@hotmail.com?subject= I'd like to ask for my website&body=Hi Dima,"
+					target="_blank" rel="noopener noreferrer"><img
+						src="{{ url_for('static', filename='email.svg') }}" class="footericon"></a><a
+					href="mailto:dmimart@hotmail.com?subject=Would like to ask for my website&body=Hi Dima,"
+					target="_blank" rel="noopener noreferrer" class="contact">Связаться через имейл</a></li>
+				<li class="footerlist"><a href="https://api.whatsapp.com/send?phone=+447487731324" target="_blank"
+					rel="noopener noreferrer" class="socmed"><img
+						src="{{ url_for('static', filename='whatsapp.svg') }}" class="footericon"></a><a
+					href="https://api.whatsapp.com/send?phone=+447487731324" target="_blank"
+					rel="noopener noreferrer" class="contact">Связаться через WhatsApp</a></li>
 			</ul>
 			<p class="attribution">Иконки на этом вебсайте сделаны<a class="hyperlinks"
-					href="https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer"> Freepik
+				href="https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer"> Freepik
 				</a>, <a class="hyperlinks" href="https://www.flaticon.com/authors/kiranshastry" target="_blank"
-					rel="noopener noreferrer"> Kiranshastry </a>,<a class="hyperlinks"
-					href="https://www.flaticon.com/authors/pixel-perfect" target="_blank" rel="noopener noreferrer">
-					Pixel perfect </a>и <a class="hyperlinks" href="https://www.flaticon.com/authors/becris"
-					target="_blank" rel="noopener noreferrer"> Becris </a> от <a class="hyperlinks"
-					href="https://www.flaticon.com/" target="_blank" rel="noopener noreferrer"> www.flaticon.com</a></p>
+				rel="noopener noreferrer"> Kiranshastry </a>,<a class="hyperlinks"
+				href="https://www.flaticon.com/authors/pixel-perfect" target="_blank" rel="noopener noreferrer">
+				Pixel perfect </a>и <a class="hyperlinks" href="https://www.flaticon.com/authors/becris"
+				target="_blank" rel="noopener noreferrer"> Becris </a> от <a class="hyperlinks"
+				href="https://www.flaticon.com/" target="_blank" rel="noopener noreferrer"> www.flaticon.com</a></p>
 			<p class="copyright">Авторские права © 2020. BROWEBGEN.COM. Все права защищены.</p>
 		</div>
+
 	</footer>
-	{% endif %}
 </body>
 
 </html>

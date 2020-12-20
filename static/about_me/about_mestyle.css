@@ -256,13 +256,21 @@ body{
 
 @media screen and (max-width: 414px) {
 
-    .mystory1{
+    .mystory1, .mystory2{
         left: 43%;
+        font-size: 30px;
     }
 
     .mystory2{
-        left: 43%;
+        margin-top: 45px;
     }
+
+    .myname{
+        margin-top: 5px;
+        font-size: 7px;
+    }
+
+
 }
 
 @media screen and (max-width: 360px) {
@@ -277,11 +285,6 @@ body{
         margin-top: 50px;
         font-size: 30px;
         left: 45%;
-    }
-
-    .myname{
-        margin-top: 5px;
-        font-size: 10px;
     }
 
     .story{
