@@ -121,6 +121,7 @@ img{
 .nav_links{/* allows to make the whole nav button space clickable*/
     display: block;
     padding: 10px;
+    -webkit-tap-highlight-color: transparent;/* removes blue highlighting in Chrome
 }
 
 .nav_links, .btn{/*to ensure that the text is in the middle of the buttons on mobile version*/
@@ -181,16 +182,6 @@ a:active{
 }
 .button3:hover::before{
     width: 100%;
-}
-
-.noSelect {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 /* c. Translator*/
