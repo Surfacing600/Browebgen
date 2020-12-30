@@ -6,6 +6,7 @@ from datetime import datetime#used in testimonial db to sort them by date and ti
 import smtplib#for email to work
 from email.message import EmailMessage#for email to work
 from email.mime.text import MIMEText#to be able to send HTML formatted email
+from flask_migrate import Migrate
 import os#to be able to use environmental variables for extra security
 
 app = Flask(__name__)# instentiates Flask app
@@ -18,15 +19,17 @@ app.config['SECRET_KEY'] = "1859956eb4f0c6adf72c10cab1f3445f"#the secret key nee
 #can you recreate this value, letting Flask detect if anything has been altered without permission.
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False # doesn't change anything just makes a warning message go away
-app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///my_form_database.db'# IMPORTANT: Defines location of the database, SQLlite
+app.config["SQLALCHEMY_DATABASE_URI"] = 'postgres://ofazdsndldssfs:9d625ccf4eda3d297e3892ec398a8b65001c50bca649b903eef02dd1722a94d9@ec2-54-75-150-32.eu-west-1.compute.amazonaws.com:5432/dao9qsdbf648gs'# IMPORTANT: Defines location of the database, SQLlite
  # is easier to get working than other file connection URI formats, no additional libraries are required, not tricky to get working on different computers
 app.config["RECAPTCHA_PUBLIC_KEY"] = "6LdjN9gZAAAAAELZcLuhEW3g4UXhxAYwjT0iL1Uw"#the key taken from my Google reCapcha account
 app.config["RECAPTCHA_PRIVATE_KEY"] = "6LdjN9gZAAAAACu-ZLZDHxjhjGZwr1vTLnol5Z_z"#the key taken from my Google reCapcha account
 app.config['TESTING'] = False# FOR TESTING: if you put the value "True" the form will get submitted without recaptcha solved
 
 db = SQLAlchemy(app)# instentiates the database
+migrate = Migrate(app, db)
 
 class form_database(db.Model):# table model or table with the name "form_database", this class represents a table in the database, class inherits from db.Model
+    __tablename__='form_database'
     # !!when you added new column you need to create a new database file to be able to see the change!!
     id = db.Column(db.Integer, primary_key=True)# every time you deal with databases you always want an id 
     # to keep track of the entries into your database, id for each entry will be unique it makes filtering
@@ -36,6 +39,12 @@ class form_database(db.Model):# table model or table with the name "form_databas
     email = db.Column(db.String(50), nullable=False)#specifies an email column
     message = db.Column(db.String(200), nullable=False)#specifies a message column
     privacy_pol_checkbox = db.Column(db.Boolean, default=False, nullable=False)
+
+    def __init__(self, name, email, message, privacy_pol_checkbox):
+        self.name = name
+        self.email = email
+        self.message = message
+        self.privacy_pol_checkbox = privacy_pol_checkbox
 
 class testimonial_database(db.Model):
     id = db.Column(db.Integer, primary_key=True)
