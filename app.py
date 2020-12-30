@@ -18,7 +18,7 @@ app.config['SECRET_KEY'] = "1859956eb4f0c6adf72c10cab1f3445f"#the secret key nee
 #can you recreate this value, letting Flask detect if anything has been altered without permission.
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False # doesn't change anything just makes a warning message go away
-# IMPORTANT: Defines location of the database, SQLlite
+app.config["SQLALCHEMY_DATABASE_URI"] = 'DATABASE_URL'# IMPORTANT: Defines location of the database, SQLlite
  # is easier to get working than other file connection URI formats, no additional libraries are required, not tricky to get working on different computers
 app.config["RECAPTCHA_PUBLIC_KEY"] = "6LdjN9gZAAAAAELZcLuhEW3g4UXhxAYwjT0iL1Uw"#the key taken from my Google reCapcha account
 app.config["RECAPTCHA_PRIVATE_KEY"] = "6LdjN9gZAAAAACu-ZLZDHxjhjGZwr1vTLnol5Z_z"#the key taken from my Google reCapcha account
