@@ -40,12 +40,6 @@ class form_database(db.Model):# table model or table with the name "form_databas
     message = db.Column(db.String(200), nullable=False)#specifies a message column
     privacy_pol_checkbox = db.Column(db.Boolean, default=False, nullable=False)
 
-    def __init__(self, name, email, message, privacy_pol_checkbox):
-        self.name = name
-        self.email = email
-        self.message = message
-        self.privacy_pol_checkbox = privacy_pol_checkbox
-
 class testimonial_database(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
