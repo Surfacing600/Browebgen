@@ -47,12 +47,7 @@
 		<article>
             <img src="{{ url_for('static', filename='blog1/server.jpg') }}" class= "mainimage" alt="server">
 			<h1>On web hosting and domains</h1>
-			<p>
-				I first would like to mention that this article is about UK servers, however it doesn't mean that
-				I can't create and put your website live if you're based in a different country. While the topic on whether 
-				your website host has to be in the same country as your target audience deserves a separate blog 
-				it's better to use domestic hosting and domain. At least because it ensures faster load speed of your website. 
-			</p>
+			
 			<h3>What is a server?</h3>
 			<p>
                 You might have seen in movies these big rooms with corridors made of blocks with hundreds of flashy indicators on them. 
@@ -84,7 +79,7 @@
             </q>
             <h3>What is a domain name?</h3>
 			<p>
-                A domain name is your unique website name, which users use to access your website. BROWEBGEN.uk is the domain name of 
+                A domain name is your unique website name, which users use to access your website. browebgen.uk is the domain name of 
                 my website. Instead of having random numbers (IP address) as your domain name you buy a human readable, unique name.
                 While, computers use IP addresses, for finding and identifying computers on the Internet humans use that additional, 
                 more comprehensible and memorable layer of address to find websites on the Internet. 
@@ -97,76 +92,106 @@
 			<h3>Why do you need a web host?</h3>
 			<p>
                 Given what's written above you need a web host to get your website files uploaded on a server maintained by your web host so
-                that the server can serve clients (visitors of your website) 24/7. They also provide you with your unique domain name.
+                that the server can serve clients (visitors of your website) 24/7. Some of them can also provide you with your unique domain name.
                 That's what you pay them for on a monthly basis. 
             </p>
-			<h3>Some UK hosting providers and their prices.</h3>
+            <h3>Where do I deploy and how much does web hosting cost?</h3>
+            <p>
+                Having explanation of server and web hosting out of the way lets look at the cloud based web hosts. 
+                I host Browebgen.uk on <a href="https://www.heroku.com/pricing">Heroku</a> cloud hosting for free because my webiste is
+                lightweight, despite the fact that it has a database. As you can see below a brochure website with a couple of forms can be hosted for free.
+                However, it can cost you quite a bit depending on a monthly website traffic, bandwidth consumed and which database or
+                storage options your website uses. In this case we're talking about heavy lifting e-commerce websites or sophysticated web apps.
+                Due to particularity of the technology I'm using I can deploy websites
+                on the following additional cloud web hosting providers:
+            </p>
+
+            <div class= "tablewrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Web hosts</th><!--table headers-->
+                            <th scope="col">Minimum price per month</th>
+                            <th scope="col">Maximum price per month</th>
+                            <th scope="col">Uptime</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><!--table row-->
+                            <th scope="row"><a href= "https://www.heroku.com/pricing" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/heroku.png') }}" class="hostingimage"></a></th><!--table data-->
+                            <td>£0</td>
+                            <td>£185</td>
+                            <td>99.9%</td>
+                        </tr>
+                        <tr><!--table row-->
+                            <th scope="row"><a href= "https://cloud.google.com/appengine/pricing" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/googlecloud.png') }}" class="hostingimage"></a></th><!--table data-->
+                            <td>£0</td>
+                            <td>No estimate</td>
+                            <td>99.5%</td>
+                        </tr>
+                        <tr><!--table row-->
+                            <th scope="row"><a href= "https://aws.amazon.com/elasticbeanstalk/pricing/" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/aws.png') }}" class="hostingimage"></a></th><!--table data-->
+                            <td>£0</td>
+                            <td>£225</td>
+                            <td>99.9%</td>
+                        </tr>
+                        <tr><!--table row-->
+                            <th scope="row"><a href= "https://azure.microsoft.com/en-gb/pricing/details/app-service/windows/" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/azure.png') }}"class="hostingimage"></a></th><!--table data-->
+                            <td>£0</td>
+                            <td>No estimate</td>
+                            <td>99.9%</td>
+                        </tr>
+                        <tr><!--table row-->
+                            <th scope="row"><a href= "https://www.pythonanywhere.com/pricing/" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/python.png') }}" class="hostingimage"></a></th><!--table data-->
+                            <td>£0</td>
+                            <td>£370</td>
+                            <td>99.9%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3>Where do I get my domain name from and how much does it cost?</h3>
 			<p>
-                Having the explanation of server and web hosting out of the way lets look at some UK web hosts and their prices as of 2020.
-                The table below represents a small sample of randomly selected web hosting providers in the UK just to give you an idea of how much having 
-                your website will cost you per month. You're welcome to make your own choice as there are many more hosting providers out there. 
-                Also, since most prices are not static you may see slightly higher prices once you visit the web hosting provider's website. Generally,
-                you can get away with a minimum price for your brochure website as this kind of website is lightweight. The prices are higher for 
-                bigger businesses as they require more sophisticated websites that have e-commerce functionality, a lot more pages or, perhaps, connected to a database. 
+                The price of a domain name very much depends on the type of domain name you use. 
+                Whether you choose ".com", ".co.uk" or ".uk" suffix will determine how much you pay, just like it's length.  
+                The table below represents a small sample of randomly selected registrars in the UK just to give you an idea of how much having 
+                your domain name will cost you per month. You're welcome to make your own choice as there are many more registrars out there. 
+                Also, since most prices are not static you may see slightly higher prices once you visit their websites.  
             </p>
             <div class= "tablewrapper">
 			<table>
                 <thead>
                     <tr>
-                        <th scope="col">UK web hosts</th><!--table headers-->
-                        <th scope="col">Minimum price per month 1st year</th>
-                        <th scope="col">Minimum price per month consequent years</th>
+                        <th scope="col">UK registrars</th><!--table headers-->
                         <th scope="col">Domain price per month 1st year</th>
                         <th scope="col">Domain price per month consequent years</th>
-                        <th scope="col">Uptime</th>
-                        <th scope="col">Total price per month</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr><!--table row-->
                         <th scope="row"><a href= "https://www.hosting.co.uk/" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/hosting.png') }}" class="hostingimage"></a></th><!--table data-->
-                        <td>£2.40</td>
-                        <td>N/A</td>
                         <td>£0.49</td>
                         <td>N/A</td>
-                        <td>99.9%</td>
-                        <td>£2.89</td>
                     </tr>
                     <tr><!--table row-->
                         <th scope="row"><a href= "https://www.123-reg.co.uk/" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/123reg.png') }}" class="hostingimage"></a></th><!--table data-->
-                        <td>£2.99</td>
-                        <td>£4.99</td>
                         <td>£0.08</td>
                         <td>£1</td>
-                        <td>99.9%</td>
-                        <td>£3.07-£5.99</td>
                     </tr>
                     <tr><!--table row-->
                         <th scope="row"><a href= "https://www.webhosting.uk.com/windows-hosting" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/whuk.png') }}" class="hostingimage"></a></th><!--table data-->
-                        <td>£2.49</td>
-                        <td>N/A</td>
                         <td>£0.70</td>
                         <td>N/A</td>
-                        <td>99.9%</td>
-                        <td>£3.19</td>
                     </tr>
                     <tr><!--table row-->
                         <th scope="row"><a href= "https://www.names.co.uk/web-hosting" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/names.png') }}"class="hostingimage"></a></th><!--table data-->
-                        <td>£4.12</td>
-                        <td>N/A</td>
                         <td>0.08</td>
                         <td>N/A</td>
-                        <td>99.9%</td>
-                        <td>£4.20</td>
                     </tr>
                     <tr><!--table row-->
                         <th scope="row"><a href= "https://uk.godaddy.com/hosting/windows-hosting" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/godaddy.png') }}" class="hostingimage"></a></th><!--table data-->
-                        <td>£3.99</td>
-                        <td>£5.99</td>
                         <td>£0.01</td>
                         <td>£1</td>
-                        <td>99.9%</td>
-                        <td>£4-£6.99</td>
                     </tr>
                 </tbody>
             </table>
@@ -183,7 +208,7 @@
 				<li class = "footerlist"><a href="https://api.whatsapp.com/send?phone=+447487731324" target="_blank" rel="noopener noreferrer" class = "socmed"><img src="{{ url_for('static', filename='whatsapp.svg') }}" class = "footericon" alt="WhatsApp symbol"></a><a href="https://api.whatsapp.com/send?phone=077487731324" target="_blank" rel="noopener noreferrer" class = "contact">Contact via WhatsApp</a></li>
 			</ul>
 			<p class = "attribution">Icons on this page made by<a class = "hyperlinks" href = "https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer"> Freepik </a> and <a class = "hyperlinks" href = "https://www.flaticon.com/authors/pixel-perfect" target="_blank" rel="noopener noreferrer"> Pixel perfect </a> from <a class = "hyperlinks" href = "https://www.flaticon.com/" target="_blank" rel="noopener noreferrer"> www.flaticon.com</a></p>
-			<p class="copyright">Copyright © 2020. BROWEBGEN.COM. All rights reserved.</p>
+			<p class="copyright">Copyright © 2020. browebgen.uk. All rights reserved.</p>
 		</div>
 			
 	</footer>
