@@ -19,8 +19,8 @@ app.config['SECRET_KEY'] = "1859956eb4f0c6adf72c10cab1f3445f"#the secret key nee
 #can you recreate this value, letting Flask detect if anything has been altered without permission.
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False # doesn't change anything just makes a warning message go away
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgres://ofazdsndldssfs:9d625ccf4eda3d297e3892ec398a8b65001c50bca649b903eef02dd1722a94d9@ec2-54-75-150-32.eu-west-1.compute.amazonaws.com:5432/dao9qsdbf648gs'# IMPORTANT: Defines location of the database, SQLlite
- # is easier to get working than other file connection URI formats, no additional libraries are required, not tricky to get working on different computers
+app.config["SQLALCHEMY_DATABASE_URI"] = 'postgres://ofazdsndldssfs:9d625ccf4eda3d297e3892ec398a8b65001c50bca649b903eef02dd1722a94d9@ec2-54-75-150-32.eu-west-1.compute.amazonaws.com:5432/dao9qsdbf648gs'# IMPORTANT: Defines location of the database,
+ # taken from Heroku, automatically generated when you create a Postgres Database on Heroku. 
 app.config["RECAPTCHA_PUBLIC_KEY"] = "6LdjN9gZAAAAAELZcLuhEW3g4UXhxAYwjT0iL1Uw"#the key taken from my Google reCapcha account
 app.config["RECAPTCHA_PRIVATE_KEY"] = "6LdjN9gZAAAAACu-ZLZDHxjhjGZwr1vTLnol5Z_z"#the key taken from my Google reCapcha account
 app.config['TESTING'] = False# FOR TESTING: if you put the value "True" the form will get submitted without recaptcha solved
@@ -103,7 +103,7 @@ def form_ru():
         msg_for_me['From'] = MY_EMAIL#uses one of my emails to send this email from to my email below
         msg_for_me['To'] = "svistoplaskino@hotmail.com"
         message_for_customer = EmailMessage()
-        message_for_customer = f"<p>Уважаемый(я) {form.name.data},<br></br>Благодарю вас за проявленный интерес к веб-службам Browebgen. Я свяжусь с вами в ближайшие 24 часа.<br></br> Yours sincerely, <br></br> Dmitry </p>"
+        message_for_customer = f"<p>Уважаемый(я) {form.name.data},<br></br>Благодарю вас за проявленный интерес к веб-службам Browebgen. Я свяжусь с вами в ближайшие 24 часа.<br></br> С уважением, <br></br> Дмитрий </p>"
         msg_for_customer = MIMEText(message_for_customer, "html")
         msg_for_customer['Subject'] = "Спасибо от Browebgen"
         msg_for_customer['From'] = MY_EMAIL
@@ -123,6 +123,10 @@ def form_ru():
         flash("Вот не задача. Проверте поля в форме.", "error_flash_message")#the message to notify the user of a mistake upon submition of the form, the second argument is a category to enable different styling for different flash messages
     return render_template("/Pages/Main page/ru/main_page-ru.html", form=form)#renders the template at first access to the page and displays the form on the page
 
+
+@app.route('/privacy_policy')#needed for the page to get loaded
+def privacy_policy():
+    return  render_template("/policy.html")
 
 @app.route('/blog')#needed for the page to get loaded
 def blog():

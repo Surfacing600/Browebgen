@@ -88,11 +88,10 @@
 
 				<p>For example, a small plumbing company would build a brochure website with a homepage to
 					display contact information, an ‘about us’ page describing the company, and maybe a few
-					photos of their work. There is a lot of good website builders out there that provide an
-					off the box solution, <a href="#" target="_blank">read my blog</a> on why you would and wouldn't want using these to build your
-					website.
-					If you don’t have time to create a website yourself or want to get a more tailored solution than the
-					website builders provide, then why not contacting me today
+					photos of their work. There are a lot of good website builders out there that provide an
+					off the box solution, but if you don’t have time to create a website yourself or want
+					to get a more tailored solution than the website builders provide, then why not
+					<a href="javascript: document.body.scrollIntoView(false);">contacting me today</a>
 					outlining your needs to get a quote?</p>
 
 			</section>
@@ -132,8 +131,8 @@
 				<ul>
 					<li>The website can be responsive - be accessed on desktops, smartphones, and tablets through
 						any browser, so you can be sure your company is reaching the maximum number of people.</li>
-					<li>The website can be bi-lingual. You won't need to provide me with the content in another
-						language unless this language is other than English or Russian.</li>
+					<li>The website can be bi-lingual. You won't need to provide me with the content in a foreign
+						language unless this language is other than Russian.</li>
 					<li>Almost everything is customisable - layout, colours, navigation bars, element shapes, buttons,
 						forms,
 						input fields, font style, types of pages, their numbers and structure. Make it your own.</li>
@@ -215,7 +214,7 @@
 			<div class="form_input_field">
 				{% if form.privacy_pol_checkbox.errors %}
 				{{ form.privacy_pol_checkbox() }}
-				<label class = "privacy_policy">I have read and agree to Browebgen<a href = "#">Privacy Policy</a></label>
+				<label class = "privacy_policy">I have read and agree to browebgen.uk<a href = http://127.0.0.1:5000/privacy_policy class ="hyperlink" target="_blank">Privacy Policy</a></label>
 				<!--actual input field from the form-->
 			</div>
 
@@ -228,7 +227,7 @@
 			<div class="form_input_field">
 				{% else %}
 				{{ form.privacy_pol_checkbox() }}
-				<label class = "privacy_policy">I have read and agree to Browebgen <a href = "#" class ="hyperlink">Privacy Policy</a></label>
+				<label class = "privacy_policy">I have read and agree to Browebgen <a href = http://127.0.0.1:5000/privacy_policy class ="hyperlink" target="_blank">Privacy Policy</a></label>
 				{% endif %}
 			</div>
 
@@ -275,7 +274,7 @@
 					Pixel perfect </a>and <a class="hyperlinks" href="https://www.flaticon.com/authors/becris"
 					target="_blank" rel="noopener noreferrer"> Becris </a> from <a class="hyperlinks"
 					href="https://www.flaticon.com/" target="_blank" rel="noopener noreferrer"> www.flaticon.com</a></p>
-			<p class="copyright">Copyright © 2020. BROWEBGEN.COM. All rights reserved.</p>
+			<p class="copyright">Copyright © 2021. browebgen.uk. All rights reserved.</p>
 		</div>
 
 	</footer>

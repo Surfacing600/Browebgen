@@ -46,127 +46,153 @@
 
 		<article>
             <img src="{{ url_for('static', filename='blog1/server.jpg') }}" class= "mainimage" alt="server">
-			<h1>On web hosting and domains</h1>
+			<h1>О веб-хостинге и доменах</h1>
+			
+			<h3>Что такое сервер?</h3>
 			<p>
-				I first would like to mention that this article is about UK servers, however it doesn't mean that
-				I can't create and put your website live if you're based in a different country. While the topic on whether 
-				your website host has to be in the same country as your target audience deserves a separate blog 
-				it's better to use domestic hosting and domain. At least because it ensures faster load speed of your website. 
-			</p>
-			<h3>What is a server?</h3>
-			<p>
-                You might have seen in movies these big rooms with corridors made of blocks with hundreds of flashy indicators on them. 
-                What they didn't tell you is that these are big computers that every online service or a website relies on. These are called servers.
-                A server is a piece of computer hardware, which provides functionality for other clients (programs or devices). 
-                This functionality often called "services". The types of services we're talking about here are: sharing data or resources among multiple
-                clients or performing computation for a client. A single server can serve multiple clients, and a single client can use multiple servers.
-                A client makes a request to a server and a server serves the client by responding to the client's request. Servers, among other things, 
-                store websites. Technically, every time you access a website you, as a client, make a request to a server which stores the website you're 
-                trying to access. A server responds by delivering the webpages to you through your browser.
+                Вы, наверное, видели в фильмах эти большие комнаты с коридорами из блоков с сотнями ярких индикаторов на них.
+                Что вам не сказали, это то что это большие компьютеры, от которых зависит каждая онлайн-служба или веб-сайт.
+                Эти блоки называются серверами. Сервер - это компьютерное оборудование, которое предоставляет функции другим
+                клиентам (программам или устройствам). Эту функциональность часто называют «услугами».
+                Здесь мы говорим о следующих типах услуг: обмен данными или ресурсами между несколькими клиентами или
+                выполнение вычислений для клиента. Один сервер может обслуживать несколько клиентов,
+                а один клиент может использовать несколько серверов. Клиент делает запрос к серверу, а сервер обслуживает клиента,
+                отвечая на запрос клиента. Серверы, среди прочего, хранят веб-сайты. Технически, каждый раз, когда вы заходите
+                на веб-сайт, вы, как клиент, делаете запрос на сервер, на котором хранится веб-сайт, на котором вы
+                пытается получить доступ. Сервер отвечает, доставляя вам веб-страницы через ваш браузер.
             </p>
 
             <img src="{{ url_for('static', filename='blog1/Client-server-model.png') }}" class= "image2" alt="client internet server model">
             
 			<q>
-				Servers, among other things, store websites.
+				Серверы, среди прочего, хранят веб-сайты.
             </q>
 
-			<h3>What is web hosting?</h3>
+			<h3>Что такое веб-хостинг?</h3>
 			<p>
-                As a service web hosting allows you to post your website onto the Internet. A web host is a business that provides the technologies and
-                services needed for the website or webpage to be viewed on the Internet. A web host owns and maintains servers that have to be on 24/7 so
-                that your website is always available. You can purchase your server and keep it at home, but apart of paying for your server, you will need
-                to deal with a pretty high electricity bill. It's often doesn't worth the hassle. A web hosting provider also provides a domain name for
-                your website.
+                Как услуга веб-хостинг позволяет вам разместить ваш сайт в Интернете. Веб-хостинг - это бизнес, который предоставляет технологии и
+                услуги, необходимые для размещения веб-сайта или веб-страницы в Интернете. Веб-хостинг владеет и поддерживает серверы,
+                которые должны работать круглосуточно и без выходных, что бы ваш сайт всегда был доступен. Вы можете купить свой сервер
+                и держать его дома, но помимо оплаты за сервер вам понадобится иметь дело с довольно высоким счетом за электричество.
+                Часто это не стоит того. Провайдер веб-хостинга также предоставляет доменное имя для вашего сайта.
             </p>
 			<q>
-				A web host owns and maintains servers that have to be on 24/7 so that your website is always available.
+				Веб-хостинг владеет и поддерживает серверы, которые должны работать круглосуточно и без выходных, что бы ваш сайт всегда был доступен.
             </q>
-            <h3>What is a domain name?</h3>
+            <h3>Что такое доменное имя?</h3>
 			<p>
-                A domain name is your unique website name, which users use to access your website. BROWEBGEN.uk is the domain name of 
-                my website. Instead of having random numbers (IP address) as your domain name you buy a human readable, unique name.
-                While, computers use IP addresses, for finding and identifying computers on the Internet humans use that additional, 
-                more comprehensible and memorable layer of address to find websites on the Internet. 
+                Доменное имя - это уникальное имя вашего веб-сайта, которое пользователи используют для доступа к вашему веб-сайту. browebgen.uk - это доменное имя
+                моего веб-сайта. Вместо того, чтобы использовать случайные числа (IP-адрес) в качестве вашего доменного имени, вы покупаете удобочитаемое и уникальное имя.
+                В то время как компьютеры используют IP-адреса, для поиска и идентификации компьютеров в Интернете люди используют этот дополнительный,
+                более понятный и запоминающийся слой адреса для поиска веб-сайтов в Интернете. 
             </p>
             
             <q>
-				A domain name is your unique website name, which users use to access your website.
+				Доменное имя - это уникальное имя вашего веб-сайта, которое пользователи используют для доступа к вашему веб-сайту.
             </q>
 
-			<h3>Why do you need a web host?</h3>
+			<h3>Почему вам нужен веб-хостинг?</h3>
 			<p>
-                Given what's written above you need a web host to get your website files uploaded on a server maintained by your web host so
-                that the server can serve clients (visitors of your website) 24/7. They also provide you with your unique domain name.
-                That's what you pay them for on a monthly basis. 
+                Учитывая то, что написано выше, вам нужен веб-хост, чтобы загрузить файлы вашего веб-сайта на сервер, убслуживаемый вашим веб-хостом, чтобы
+                сервер мог обслуживать клиентов (посетителей вашего сайта) 24/7. Некоторые из них также могут предоставить вам уникальное доменное имя.
+                Это то, за что вы платите им ежемесячно.
             </p>
-			<h3>Some UK hosting providers and their prices.</h3>
+            <h3>Куда я загружаю и сколько стоит веб-хостинг?</h3>
+            <p>
+                Разобравшись что такое сервера и веб-хостинг, давайте рассмотрим облачные хостинги.
+                Я разместил browebgen.uk на облачном хостинге <a href="https://www.heroku.com/pricing" target="_blank"> Heroku </a> бесплатно, потому что мой веб-сайт
+                легкий, несмотря на то, что в нем есть база данных. Как вы можете видеть ниже, сайт-брошюра с парой веб-форм можно разместить бесплатно.
+                Однако, это может стоить вам довольно много в зависимости от ежемесячного трафика веб-сайта, используемой полосы пропускания и от того, какую базу данных или
+                тип хранения, использует ваш сайт. В данном случае мы говорим о тяжелых веб-сайтах е-коммерции или о сложных веб-приложениях.
+                Благодаря особенностям технологии, которую я использую, я могу размещать веб-сайты у следующих дополнительных поставщиков облачного веб-хостинга:
+            </p>
+
+            <div class= "tablewrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Веб-хостинги</th><!--table headers-->
+                            <th scope="col">Минимальная цена за месяц</th>
+                            <th scope="col">Максимальная цена за месяц</th>
+                            <th scope="col">Время безотказной работы</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><!--table row-->
+                            <th scope="row"><a href= "https://www.heroku.com/pricing" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/heroku.png') }}" class="hostingimage"></a></th><!--table data-->
+                            <td>£0</td>
+                            <td>£185</td>
+                            <td>99.9%</td>
+                        </tr>
+                        <tr><!--table row-->
+                            <th scope="row"><a href= "https://cloud.google.com/appengine/pricing" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/googlecloud.png') }}" class="hostingimage"></a></th><!--table data-->
+                            <td>£0</td>
+                            <td>Нету подсчета</td>
+                            <td>99.5%</td>
+                        </tr>
+                        <tr><!--table row-->
+                            <th scope="row"><a href= "https://aws.amazon.com/elasticbeanstalk/pricing/" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/aws.png') }}" class="hostingimage"></a></th><!--table data-->
+                            <td>£0</td>
+                            <td>£225</td>
+                            <td>99.9%</td>
+                        </tr>
+                        <tr><!--table row-->
+                            <th scope="row"><a href= "https://azure.microsoft.com/en-gb/pricing/details/app-service/windows/" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/azure.png') }}"class="hostingimage"></a></th><!--table data-->
+                            <td>£0</td>
+                            <td>Нету подсчета</td>
+                            <td>99.9%</td>
+                        </tr>
+                        <tr><!--table row-->
+                            <th scope="row"><a href= "https://www.pythonanywhere.com/pricing/" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/python.png') }}" class="hostingimage"></a></th><!--table data-->
+                            <td>£0</td>
+                            <td>£370</td>
+                            <td>99.9%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3>Откуда мне взять доменное имя и сколько это стоит?</h3>
 			<p>
-                Having the explanation of server and web hosting out of the way lets look at some UK web hosts and their prices as of 2020.
-                The table below represents a small sample of randomly selected web hosting providers in the UK just to give you an idea of how much having 
-                your website will cost you per month. You're welcome to make your own choice as there are many more hosting providers out there. 
-                Also, since most prices are not static you may see slightly higher prices once you visit the web hosting provider's website. Generally,
-                you can get away with a minimum price for your brochure website as this kind of website is lightweight. The prices are higher for 
-                bigger businesses as they require more sophisticated websites that have e-commerce functionality, a lot more pages or, perhaps, connected to a database. 
+                Цена доменного имени очень сильно зависит от типа доменного имени, которое вы используете.
+                Выбор суффика («.com», «.co.uk», «.uk») и длинна домена определяют его стоимость.
+                В таблице ниже представлена небольшая выборка регистраторов в Великобритании, чтобы дать вам представление о том, сколько
+                ваше доменное имя будет стоить вам в месяц. Вы можете сделать свой выбор, так как разных регистраторов много.
+                Имейте ввиду что цены не статичны, вы можете увидеть немного выше цены на их веб-сайтах.  
             </p>
             <div class= "tablewrapper">
 			<table>
                 <thead>
                     <tr>
-                        <th scope="col">UK web hosts</th><!--table headers-->
-                        <th scope="col">Minimum price per month 1st year</th>
-                        <th scope="col">Minimum price per month consequent years</th>
-                        <th scope="col">Domain price per month 1st year</th>
-                        <th scope="col">Domain price per month consequent years</th>
-                        <th scope="col">Uptime</th>
-                        <th scope="col">Total price per month</th>
+                        <th scope="col">Регистраторы в Великобритании</th><!--table headers-->
+                        <th scope="col">Месячная цена домена первый год</th>
+                        <th scope="col">Месячная цена домена последующие года</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr><!--table row-->
                         <th scope="row"><a href= "https://www.hosting.co.uk/" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/hosting.png') }}" class="hostingimage"></a></th><!--table data-->
-                        <td>£2.40</td>
-                        <td>N/A</td>
                         <td>£0.49</td>
-                        <td>N/A</td>
-                        <td>99.9%</td>
-                        <td>£2.89</td>
+                        <td>Нет данных</td>
                     </tr>
                     <tr><!--table row-->
                         <th scope="row"><a href= "https://www.123-reg.co.uk/" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/123reg.png') }}" class="hostingimage"></a></th><!--table data-->
-                        <td>£2.99</td>
-                        <td>£4.99</td>
                         <td>£0.08</td>
                         <td>£1</td>
-                        <td>99.9%</td>
-                        <td>£3.07-£5.99</td>
                     </tr>
                     <tr><!--table row-->
                         <th scope="row"><a href= "https://www.webhosting.uk.com/windows-hosting" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/whuk.png') }}" class="hostingimage"></a></th><!--table data-->
-                        <td>£2.49</td>
-                        <td>N/A</td>
                         <td>£0.70</td>
-                        <td>N/A</td>
-                        <td>99.9%</td>
-                        <td>£3.19</td>
+                        <td>Нет данных</td>
                     </tr>
                     <tr><!--table row-->
                         <th scope="row"><a href= "https://www.names.co.uk/web-hosting" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/names.png') }}"class="hostingimage"></a></th><!--table data-->
-                        <td>£4.12</td>
-                        <td>N/A</td>
                         <td>0.08</td>
-                        <td>N/A</td>
-                        <td>99.9%</td>
-                        <td>£4.20</td>
+                        <td>Нет данных</td>
                     </tr>
                     <tr><!--table row-->
                         <th scope="row"><a href= "https://uk.godaddy.com/hosting/windows-hosting" rel="nofollow" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='blog1/godaddy.png') }}" class="hostingimage"></a></th><!--table data-->
-                        <td>£3.99</td>
-                        <td>£5.99</td>
                         <td>£0.01</td>
                         <td>£1</td>
-                        <td>99.9%</td>
-                        <td>£4-£6.99</td>
                     </tr>
                 </tbody>
             </table>
@@ -179,11 +205,11 @@
 
         <div class= "footercontainer">
 			<ul class="footer">
-                <li class = "footerlist"><a href="mailto:dmimart@hotmail.com?subject= I'd like to ask for my website&body=Hi Dima," target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='email.svg') }}" class = "footericon" alt="envelope"></a><a href="mailto:dmimart@hotmail.com?subject=Would like to ask for my website&body=Hi Dima," target="_blank" rel="noopener noreferrer" class = "contact">Связаться через имейл</a></li>
-				<li class = "footerlist"><a href="https://api.whatsapp.com/send?phone=+447487731324" target="_blank" rel="noopener noreferrer" class = "socmed"><img src="{{ url_for('static', filename='whatsapp.svg') }}" class = "footericon" alt="WhatsApp symbol"></a><a href="https://api.whatsapp.com/send?phone=+447487731324" target="_blank" rel="noopener noreferrer" class = "contact">Связаться через WhatsApp</a></li>
+                <li class = "footerlist"><a href="mailto:dmimart@hotmail.com?subject= I'd like to ask for my website&body=Hi Dima," target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='email.svg') }}" class = "footericon" alt="envelope"></a><a href="mailto:dmimart@hotmail.com?subject=Would like to ask for my website&body=Hi Dima," target="_blank" rel="noopener noreferrer" class = "contact">Contact via email</a></li>
+				<li class = "footerlist"><a href="https://api.whatsapp.com/send?phone=+447487731324" target="_blank" rel="noopener noreferrer" class = "socmed"><img src="{{ url_for('static', filename='whatsapp.svg') }}" class = "footericon" alt="WhatsApp symbol"></a><a href="https://api.whatsapp.com/send?phone=077487731324" target="_blank" rel="noopener noreferrer" class = "contact">Contact via WhatsApp</a></li>
 			</ul>
-			<p class = "attribution">Иконки на этой странице сделаны<a class = "hyperlinks" href = "https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer"> Freepik </a> и <a class = "hyperlinks" href = "https://www.flaticon.com/authors/pixel-perfect" target="_blank" rel="noopener noreferrer"> Pixel perfect </a> от <a class = "hyperlinks" href = "https://www.flaticon.com/" target="_blank" rel="noopener noreferrer"> www.flaticon.com</a></p>
-			<p class="copyright">Авторские права © 2020. BROWEBGEN.COM. Все права защищены.</p>
+			<p class = "attribution">Icons on this page made by<a class = "hyperlinks" href = "https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer"> Freepik </a> and <a class = "hyperlinks" href = "https://www.flaticon.com/authors/pixel-perfect" target="_blank" rel="noopener noreferrer"> Pixel perfect </a> from <a class = "hyperlinks" href = "https://www.flaticon.com/" target="_blank" rel="noopener noreferrer"> www.flaticon.com</a></p>
+			<p class="copyright">Copyright © 2021. browebgen.uk. All rights reserved.</p>
 		</div>
 			
 	</footer>
