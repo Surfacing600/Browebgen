@@ -234,6 +234,6 @@ if __name__ == '__main__': #The statement is saying: Is this file being run dire
 # Therefore, __name__ will be equal to "__main__". That means the if conditional 
 # statement is satisfied and the app.run() method will be executed. This technique 
 # allows the programmer to have control over script’s behavior.
-    app.run(debug=True)#Notice also that we are setting the debug parameter to true. That will print out 
+    app.run(debug=False)#Notice also that we are setting the debug parameter to true. That will print out 
     #possible Python errors on the web page helping us trace the errors. However, in a production environment, 
     # you would want to set it to False as to avoid any security issues.
