@@ -6,7 +6,7 @@ from datetime import datetime#used in testimonial db to sort them by date and ti
 import smtplib#for email to work
 from email.message import EmailMessage#for email to work
 from email.mime.text import MIMEText#to be able to send HTML formatted email
-from flask_migrate import Migrate
+from flask_migrate import Migrate# enables to migrate database to pgAdmin
 import os#to be able to use environmental variables for extra security
 
 app = Flask(__name__)# instentiates Flask app
@@ -26,7 +26,7 @@ app.config["RECAPTCHA_PRIVATE_KEY"] = "6LdjN9gZAAAAACu-ZLZDHxjhjGZwr1vTLnol5Z_z"
 app.config['TESTING'] = False# FOR TESTING: if you put the value "True" the form will get submitted without recaptcha solved
 
 db = SQLAlchemy(app)# instentiates the database
-migrate = Migrate(app, db)
+migrate = Migrate(app, db)# enables to migrate database to pgAdmin
 
 class form_database(db.Model):# table model or table with the name "form_database", this class represents a table in the database, class inherits from db.Model
     __tablename__='form_database'
